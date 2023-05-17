@@ -1,41 +1,36 @@
-import "./App.css";
-import logo from "./logo.png";
+import { Routes, Route } from 'react-router';
+import './App.css';
+import Navbar from './components/navbar/Navbar';
+import Home from './pages/homepage/Homepage';
+import Cart from './pages/cartPage/CartPage';
+import ProductListing from './pages/productListingpage/ProductListPage';
+import Wishlist from './pages/wishlistPage/WishlistPage';
+import IndividualProduct from './pages/individualProductPage/IndividualProductPage';
+import Login from './pages/loginPage/LoginPage';
+import Signup from './pages/sigupPage/SignupPage';
+import RequireAuth from './auth/RequireAuth';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} alt="mockBee logo" width="180" height="180" />
-        <h1 className="brand-title">
-          Welcome to <span>mockBee!</span>
-        </h1>
-        <p className="brand-description">
-          Get started by editing <code>src/App.js</code>
-        </p>
-        <div className="links">
-          <a
-            href="https://mockbee.netlify.app/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Explore mockBee
-          </a>
-          <a
-            href="https://mockbee.netlify.app/docs/api/introduction"
-            target="_blank"
-            rel="noreferrer"
-          >
-            API Documentation
-          </a>
-          <a
-            href="https://github.com/neogcamp/mockBee"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Contribute
-          </a>
-        </div>
-      </header>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/cart' element={
+          <RequireAuth>
+            <Cart />
+          </RequireAuth>
+        } />
+        <Route path='/wishlist' element={
+          <RequireAuth>
+            <Wishlist />
+          </RequireAuth>
+        } />
+        <Route path='/products' element={<ProductListing />} />
+        <Route path='/products/:productId' element={<IndividualProduct />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<Signup />} />
+      </Routes>
     </div>
   );
 }

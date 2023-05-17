@@ -1,0 +1,103 @@
+/* Default styles for mobile devices */
+
+.price-filter-tag {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mainb-bar {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  row-gap: 15px;
+}
+
+/* Styles for tablets (portrait) and up */
+@media (min-width: 768px) {
+  /* Side Bar */
+
+  .side-bar {
+    border: 2px soldi red;
+    height: 38.5rem;
+    width: 30%;
+  }
+  .mainbar {
+    border: 2px solid blue;
+    height: 100%;
+    width: 70%;
+  }
+
+  .product-listing {
+    display: flex;
+    flex-direction: row;
+  }
+  /* main bar  */
+  .main-bar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.2rem;
+    cursor: pointer;
+  }
+}
+
+/* Styles for laptops and up */
+@media screen and (min-width: 1024px) {
+  .product-listing {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .clear-btn {
+    background-color: transparent;
+    border: none;
+    color: black;
+    text-decoration: underline;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  /* Side Bar */
+
+  .side-bar {
+    border: 2px soldi red;
+    height: 38.5rem;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: 1px solid silver;
+    border-style: none solid none none;
+  }
+
+  .first-div {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .second-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .filter-div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .filter-checkbox {
+    width: 15px;
+  }
+
+  /* Main bar  */
+
+  .main-bar {
+    width: 80%;
+    display: grid;
+    grid: repeat(4, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1.2rem;
+    cursor: pointer;
+  }
+}

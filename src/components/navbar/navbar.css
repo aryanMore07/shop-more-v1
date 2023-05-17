@@ -1,0 +1,214 @@
+/* For Mobile view styling */
+
+.leftside-div {
+  grid-area: leftDiv;
+}
+
+.middle-one-div {
+  grid-area: middleDiv;
+}
+
+.rightside-div {
+  grid-area: rightDiv;
+}
+
+.navbar-div {
+  background-color: #3b82f6;
+  padding-right: 15px;
+  margin-top: -16px;
+}
+
+.navlogin-btn {
+  background-color: white;
+  color: #3b82f6;
+}
+
+.layout {
+  list-style: none;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  grid-template-areas: "leftDiv" "rightDiv" "middleDiv";
+  padding-right: 33px;
+}
+
+.input-box {
+  text-align: center;
+  border-radius: 5px;
+  border: white;
+  font-weight: 600;
+  border: none;
+  margin-bottom: 25px;
+  height: 29px;
+}
+
+.input-box:focus {
+  outline-color: #1176f1;
+}
+
+.navlogin-btn {
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  width: 4rem;
+  height: 29px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.components {
+  height: 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 18rem;
+}
+
+/* Favorite and cart icons style  */
+
+.icon {
+  color: white;
+  cursor: pointer;
+}
+
+.mui-icons {
+  height: 1.5rem;
+}
+
+input {
+  width: 18rem;
+}
+
+/* For Laptop and above */
+
+@media screen and (min-width: 768px) {
+
+  .navbar-div {
+    background-color: #3b82f6;
+    margin-top: -16px;
+    min-width: 100%;
+  }
+
+  .layout {
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Favorite and cart icons component style  */
+
+  .components {
+    height: 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 16rem;
+    margin-right: 2rem;
+  }
+
+  /* Input style  */
+
+  .input-box {
+    text-align: center;
+    padding: 4px;
+    border-radius: 5px;
+    width: 27ch;
+    border: white;
+    margin: 0px;
+    height: 30px;
+  }
+
+  /* login button styles  */
+
+  .navlogin-btn {
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    width: 4rem;
+    height: 29px;
+    text-align: center;
+    border-radius: 5px;
+  }
+
+  /* Favorite and cart icons style  */
+
+  .icon {
+    color: white;
+    cursor: pointer;
+  }
+
+  .mui-icons {
+    height: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .navbar-div {
+    background-color: #3b82f6;
+    margin-top: -16px;
+    /* min-width: 100%; */
+  }
+
+  .layout {
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .input-box {
+    text-align: center;
+    padding: 4px;
+    border-radius: 5px;
+    width: 47ch;
+    border: white;
+    margin: 0px;
+    height: 30px;
+  }
+
+  .input-box:focus {
+    background-color: white;
+  }
+
+  /* Favorite and cart icons component style  */
+
+  .components {
+    height: 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 16rem;
+    margin-right: 2rem;
+  }
+
+  .navlogin-btn {
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    width: 4rem;
+    height: 29px;
+    text-align: center;
+    border-radius: 5px;
+  }
+
+  .navlogin-btn:hover {
+    background-color: #60a5fa;
+    color: white;
+  }
+
+  /* Favorite and cart icons style  */
+
+  .icon {
+    color: white;
+    cursor: pointer;
+  }
+
+  .mui-icons {
+    height: 1.5rem;
+  }
+}

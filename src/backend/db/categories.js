@@ -8,20 +8,29 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: uuid(),
-    categoryName: "fiction",
-    description:
-      "literature in the form of prose, especially novels, that describes imaginary events and people",
+    categoryName: "Mobiles",
+    description:"Best deals in on Mobile phones",
+    img: 'https://images.samsung.com/is/image/samsung/assets/in/offer/online/latest-5g-mobile-phone-online/Banner_Mobile_720x402.jpg?$720_N_JPG$w'
   },
   {
     _id: uuid(),
-    categoryName: "non-fiction",
+    categoryName: "Furnitures",
     description:
-      "Non-fiction is writing that gives information or describes real events, rather than telling a story.",
+      "Up to 75% off on Furniture & mattresses",
+    img: 'https://m.media-amazon.com/images/I/61cefoSfepS._SL1062_.jpg'
   },
   {
     _id: uuid(),
-    categoryName: "horror",
+    categoryName: "Home Entertainment Systems",
     description:
-      "Meant to cause discomfort and fear for both the character and readers, horror writers often make use of supernatural and paranormal elements in morbid stories that are sometimes a little too realistic.",
+      "Best Details available for Home Entertainment Systems",
+    img: 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2020/10/16/15/kef-q-series-lifestyle-home-theatre-1.jpg?width=968&auto=webp&quality=50&crop=968%3A645%2Csmart'
+  },
+  {
+    _id: uuid(),
+    categoryName: "Clothes",
+    description:
+      "Clothings for all Men, women and Kids",
+    img: 'https://www.livingrichwithcoupons.com/wp-content/uploads/2019/02/5-8-1.jpg'
   },
 ];
