@@ -6,7 +6,7 @@ import ProductComponent from '../../components/productComponent/ProductComponent
 
 const ProductListing = () => {
 
-    const [ value, setValue ] = useState(500);
+    const [value, setValue] = useState(500);
 
     return (
         <div>
@@ -21,7 +21,7 @@ const ProductListing = () => {
                         <input value={value} min='500' max='50000' type="range" id='price-sort' onChange={(e) => {
                             setValue(e.target.value)
                         }} />
-                        
+
                     </div>
                     <div className='third-div'>
                         <b>Category</b>
@@ -44,7 +44,7 @@ const ProductListing = () => {
                             </label>
                         </div>
                     </div>
-                    <div className='Fourth-div'>
+                    <div className='fourth-div'>
                         <b>Rating</b>
                         <div className='filter-div'>
                             <label htmlFor="four-star">
@@ -64,6 +64,8 @@ const ProductListing = () => {
                                 1 Stars & above
                             </label>
                         </div>
+                    </div>
+                    <div className='fifth-div'>
                         <div className='filter-div'>
                             <b>Sort by</b>
                             <label htmlFor="low-to-high">
@@ -80,7 +82,7 @@ const ProductListing = () => {
                 <div className='main-bar'>
                     {
                         products.map((item) => (
-                            <ProductComponent items={item}/>
+                            <ProductComponent items={item} />
                         ))
                     }
                 </div>

@@ -1,25 +1,134 @@
 /* Default styles for mobile devices */
 
+/* Side Bar */
+
+#price-sort {
+  width: 15rem;
+}
+
+.side-bar {
+  height: 37.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid silver;
+  border-style: none solid none none;
+}
+
+.first-div {
+  display: flex;
+  justify-content: space-evenly;
+  width: 15rem;
+}
+
+.second-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 15rem;
+}
+
+.third-div {
+  width: 15rem;
+  width: 15rem;
+}
+
+.fourth-div {
+  width: 15rem;
+}
+
+.fifth-div {
+  width: 15rem;
+}
+
+.filter-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-checkbox {
+  width: 15px;
+}
+
 .price-filter-tag {
-  width: 60%;
+  width: 10.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.mainb-bar {
+
+.clear-btn {
+  background-color: transparent;
+  border: none;
+  color: black;
+  text-decoration: underline;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.main-bar {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   row-gap: 15px;
+  justify-items: center;
 }
 
 /* Styles for tablets (portrait) and up */
 @media (min-width: 768px) {
   /* Side Bar */
 
+  /* Side Bar */
+
   .side-bar {
-    border: 2px soldi red;
     height: 38.5rem;
-    width: 30%;
+    width: 28%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: 1px solid silver;
+    border-style: none solid none none;
+    position: fixed;
+  }
+
+  .first-div {
+    display: flex;
+    justify-content: space-between;
+    width: 12rem;
+  }
+
+  .second-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 12rem;
+  }
+
+  .price-filter-tag {
+    width: 10.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .third-div {
+    width: 12rem;
+  }
+
+  .fourth-div {
+    width: 12rem;
+  }
+
+  .filter-div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .filter-checkbox {
+    width: 15px;
   }
   .mainbar {
     border: 2px solid blue;
@@ -31,12 +140,24 @@
     display: flex;
     flex-direction: row;
   }
+
+  .clear-btn {
+    background-color: transparent;
+    border: none;
+    color: black;
+    text-decoration: underline;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
   /* main bar  */
   .main-bar {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1.2rem;
+    grid-gap: 50px;
     cursor: pointer;
+    justify-items: center;
+    margin-left: 289px;
   }
 }
 
@@ -59,7 +180,6 @@
   /* Side Bar */
 
   .side-bar {
-    border: 2px soldi red;
     height: 38.5rem;
     width: 20%;
     display: flex;
@@ -67,11 +187,13 @@
     justify-content: space-evenly;
     border: 1px solid silver;
     border-style: none solid none none;
+    position: fixed;
   }
 
   .first-div {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    width: 15rem;
   }
 
   .second-div {
@@ -79,6 +201,19 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 15rem;
+  }
+
+  .third-div {
+    width: 15rem;
+  }
+
+  .fourth-div {
+    width: 15rem;
+  }
+
+  .fifth-div {
+    width: 15rem;
   }
 
   .filter-div {
@@ -97,7 +232,9 @@
     display: grid;
     grid: repeat(4, 1fr);
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 1.2rem;
+    grid-gap: 30px;
     cursor: pointer;
+    justify-items: center;
+    margin-left: 289px;
   }
 }
