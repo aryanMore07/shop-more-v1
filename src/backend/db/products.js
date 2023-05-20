@@ -7,7 +7,7 @@ import { v4 as uuid } from "uuid";
 
  export const products = [
   {
-    id: uuid(),
+    _id: uuid(),
     name: "Smartphone",
     category: "Electronics",
     inStock: true,
@@ -16,7 +16,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.2
   },
   {
-    id: uuid(),
+    _id: uuid(),
     name: "Laptop",
     category: "Electronics",
     inStock: true,
@@ -25,7 +25,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.8
   },
   {
-    id: uuid(),
+    _id: uuid(),
     name: "Headphones",
     category: "Electronics",
     inStock: true,
@@ -34,7 +34,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.1
   },
   {
-    id: uuid(),
+    _id: uuid(),
     name: "Television",
     category: "Electronics",
     inStock: true,
@@ -43,7 +43,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.6
   },
   {
-    id: uuid(),
+    _id: uuid(),
     name: "Gaming Chair",
     category: "Furniture",
     inStock: true,
@@ -52,7 +52,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.5
   },
   {
-    id: uuid(),
+    _id: uuid(),
     name: "Tablet",
     category: "Electronics",
     inStock: true,
@@ -61,7 +61,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.3
   },
   {
-    id: uuid(),
+    _id: uuid(),
     name: "Soundbar",
     category: "Electronics",
     inStock: true,
@@ -70,7 +70,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.4
   },
   {
-    id: uuid(),
+    _id: uuid(),
     name: "Desktop Computer",
     category: "Electronics",
     inStock: true,
@@ -79,7 +79,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.7
   },
   {
-    id: uuid(),
+    _id: uuid(),
     name: "Smartwatch",
     category: "Electronics",
     inStock: true,
@@ -88,7 +88,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.0
   },
   {
-    id: uuid(),
+    _id: uuid(),
     name: "Wireless Earbuds",
     category: "Electronics",
     inStock: true,
@@ -97,7 +97,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.2
   },
   {
-    id: uuid(),
+    _id: uuid(),
     name: "Sofa",
     category: "Furniture",
     inStock: true,
@@ -106,7 +106,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.6
   },
   {
-    id: uuid(),
+    _id: uuid(),
     name: "Dining Table",
     category: "Furniture",
     inStock: true,
@@ -115,7 +115,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.3
   },
   {
-    id: uuid(),
+    _id: uuid(),
     name: "Recliner Chair",
     category: "Furniture",
     inStock: true,
@@ -124,7 +124,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.8
   },
   {
-    id: uuid(),
+    _id: uuid(),
     name: "Air Conditioner",
     category: "Electronics",
     inStock: true,
@@ -133,7 +133,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.5
   },
   {
-    id: uuid(),
+    _id: uuid(),
     name: "Blender",
     category: "Appliances",
     inStock: true,
@@ -142,7 +142,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.1
   },
   {
-    id: uuid(),
+    _id: uuid(),
     name: "Washing Machine",
     category: "Appliances",
     inStock: true,
@@ -151,7 +151,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.6
   },
   {
-    id: uuid(),
+    _id: uuid(),
     name: "T-Shirt",
     category: "Cloths",
     inStock: true,
@@ -160,7 +160,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.2
   },
   {
-    id: uuid(),
+    _id: uuid(),
     name: "Jeans",
     category: "Cloths",
     inStock: true,
@@ -169,7 +169,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.4
   },
   {
-    id: uuid(),
+    _id: uuid(),
     name: "Dress",
     category: "Cloths",
     inStock: true,
@@ -178,7 +178,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.3
   },
   {
-    id: uuid(),
+    _id: uuid(),
     name: "Shoes",
     category: "Cloths",
     inStock: true,
@@ -187,7 +187,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.7
   },
   {
-    id: uuid(),
+    _id: uuid(),
     name: "Camera",
     category: "Electronics",
     inStock: true,
@@ -196,7 +196,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.5
   },
   {
-    id: uuid(),
+    _id: uuid(),
     name: "Printer",
     category: "Electronics",
     inStock: true,
@@ -205,7 +205,7 @@ import { v4 as uuid } from "uuid";
     rating: 3.8
   },
   {
-    id: uuid(),
+    _id: uuid(),
     name: "Office Chair",
     category: "Furniture",
     inStock: true,
@@ -214,7 +214,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.2
   },
   {
-    id: uuid(),
+    _id: uuid(),
     name: "Bed",
     category: "Furniture",
     inStock: true,
@@ -223,7 +223,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.7
   },
   {
-    id: uuid(),
+    _id: uuid(),
     name: "Watch",
     category: "Accessories",
     inStock: true,
@@ -232,7 +232,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.0
   },
   {
-    id: uuid(),
+    _id: uuid(),
     name: "Microwave Oven",
     category: "Appliances",
     inStock: true,
@@ -241,7 +241,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.2
   },
   {
-    id: uuid(),
+    _id: uuid(),
     name: "Handbag",
     category: "Cloths",
     inStock: true,
@@ -250,7 +250,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.5
   },
   {
-    id: uuid(),
+    _id: uuid(),
     name: "TV Stand",
     category: "Furniture",
     inStock: true,
@@ -259,7 +259,7 @@ import { v4 as uuid } from "uuid";
     rating: 3.9
   },
   {
-    id: uuid(),
+    _id: uuid(),
     name: "Sunglasses",
     category: "Accessories",
     inStock: true,
@@ -268,7 +268,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.1
   },
   {
-    id: uuid(),
+    _id: uuid(),
     name: "Jacket",
     category: "Cloths",
     inStock: true,

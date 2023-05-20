@@ -1,10 +1,10 @@
 import React from 'react';
 import './productComponent.css';
 
-const ProductComponent = ({ items }) => {
-    const { id, name, price, inStock, category, image } = items;
+export const ProductComponent = ({ items }) => {
+    const { _id, name, price, inStock, category, image } = items;
     return (
-        <div key={id} className='product-card'>
+        <div key={_id} className='product-card'>
             <img className='product-img ' src={image} alt="product" />
             <div className='inner-divs'>
                 <h3>{name}</h3>
@@ -19,4 +19,4 @@ const ProductComponent = ({ items }) => {
     )
 }
 
-export default ProductComponent
+// export default ProductComponent;

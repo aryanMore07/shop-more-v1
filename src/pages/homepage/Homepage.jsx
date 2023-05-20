@@ -1,11 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './homepage.css';
 import headerImage from '../../images/ecommerceHeaderImg.svg';
 import cartImage from '../../images/addtocartImg.svg';
-import { categories } from '../../backend/db/categories';
-// import { useNavigate } from 'react-router';
+import { getAllCategory } from '../../data/data';
+import { useNavigate } from 'react-router';
 
 const Home = () => {
+
+  const [categories, setCategories] = useState([]);
+  const navigate = useNavigate();
+
+  const fetchCategories = async () => {
+    try {
+      const categoriesData = await getAllCategory();
+      setCategories(categoriesData.data.categories);
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    fetchCategories()
+  }, [])
 
   return (
     <div className='home-div'>
@@ -23,7 +39,9 @@ const Home = () => {
             categories.map((category) => {
               const { _id, categoryName, description, img } = category;
               return (
-                <div className='category' key={_id}>
+                <div onClick={() => {
+                  navigate('/products');
+                }} className='category' key={_id}>
                   <img className='product-img' src={img} alt="product" />
                   <h3>{categoryName}</h3>
                   <p>{description}</p>

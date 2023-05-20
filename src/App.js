@@ -9,6 +9,8 @@ import IndividualProduct from './pages/individualProductPage/IndividualProductPa
 import Login from './pages/loginPage/LoginPage';
 import Signup from './pages/sigupPage/SignupPage';
 import RequireAuth from './auth/RequireAuth';
+import MockmanComponent from './pages/mockman/Mockman';
+import ErrorPage from './pages/errorPage/ErrorPage';
 
 function App() {
   return (
@@ -30,6 +32,8 @@ function App() {
         <Route path='/products/:productId' element={<IndividualProduct />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
+        <Route path='/mockman' element={<MockmanComponent />} />
+        <Route path='/*' element={<ErrorPage />} />
       </Routes>
     </div>
   );
