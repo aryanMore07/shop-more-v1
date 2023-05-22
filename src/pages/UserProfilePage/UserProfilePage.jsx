@@ -10,12 +10,14 @@ const UserProfile = () => {
     return (
         <div className='user-profile-div'>
             <div className='user-profile-details-div'>
-                <p><b>First Name:</b> {state?.userDetails?.firstName}</p>
-                <p><b>Last Name:</b> {state?.userDetails?.lastName}</p>
-                <p><b>Email:</b> {state?.userDetails?.email}</p>
+                <div className='user-info'>
+                    <p><b>First Name:</b> {state?.userDetails?.firstName}</p>
+                    <p><b>Last Name:</b> {state?.userDetails?.lastName}</p>
+                    <p><b>Email:</b> {state?.userDetails?.email}</p>
+                </div>
                 <div className='btn-div'>
                     <button className='logout-btn' onClick={() => {
-                        dispatch({type: 'UPDATE_USERS_LOGIN', payload: ''})
+                        dispatch({ type: 'UPDATE_USERS_LOGIN', payload: '' })
                     }}>Logout</button>
                 </div>
             </div>
