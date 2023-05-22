@@ -1,19 +1,23 @@
 import React from 'react';
 import './productComponent.css';
 import axios from 'axios';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import { useNavigate } from 'react-router';
 
 export const ProductComponent = ({ items }) => {
 
+    const navigate = useNavigate();
     const token = localStorage.getItem('token');
     const addToCartHandler = async (item) => {
+        console.log(item);
         try {
             const response = await axios.post('/api/user/cart', {
-                item,
+                product: item,
                 headers: {
-                    authorization: token
-                }
+                    authorization: token,
+                },
             })
-            if(response.status === 200) {
+            if (response.status === 200) {
                 alert('Added to cart succesfully')
             } else {
                 alert('Failed to add')
@@ -25,8 +29,13 @@ export const ProductComponent = ({ items }) => {
 
     const { _id, name, price, inStock, category, image } = items;
     return (
-        <div key={_id} className='product-card'>
+        <div key={_id} className='product-card' onClick={() => {
+            navigate(`/products/${_id}`)
+        }}>
             <img className='product-img ' src={image} alt="product" />
+            <div className='wishlist-btn'>
+                <FavoriteIcon style={{ color: 'red' }} />
+            </div>
             <div className='inner-divs'>
                 <h3>{name}</h3>
                 <p>₹ {price}</p>

@@ -1,0 +1,56 @@
+/* Default styles for mobile devices */
+
+.individual-product-img {
+    width: 310px;
+    height: 310px;
+}
+
+.p_tags {
+    font-size: 20px;
+}
+
+.product-detail-main-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+  /* Styles for tablets (portrait) and up */
+  @media (min-width: 768px) {
+
+    .individual-product-img {
+        width: 400px;
+        height: 400px;
+    }
+
+    .p_tags {
+        font-size: 30px;
+    }
+
+    .product-detail-main-div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+  }
+  
+  /* Styles for laptops and up */
+  @media screen and (min-width: 1024px) {
+
+    .individual-product-img {
+        width: 400px;
+        height: 400px;
+    }
+
+    .p_tags {
+        font-size: 30px;
+    }
+
+    .product-detail-main-div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+  }

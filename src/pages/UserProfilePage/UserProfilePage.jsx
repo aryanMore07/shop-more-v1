@@ -18,6 +18,7 @@ const UserProfile = () => {
                 <div className='btn-div'>
                     <button className='logout-btn' onClick={() => {
                         dispatch({ type: 'UPDATE_USERS_LOGIN', payload: '' })
+                        dispatch({ type: 'UPDATE_USERS_TOKEN', payload: '' })
                     }}>Logout</button>
                 </div>
             </div>
