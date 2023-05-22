@@ -9,7 +9,8 @@ import { FilteredDataContext } from '../../contexts/FilteredDataContext';
 const Navbar = () => {
 
     const navigate = useNavigate();
-    const { dispatch } = useContext(FilteredDataContext);
+    const { state, dispatch } = useContext(FilteredDataContext);
+
 
     return (
         <div className='navbar-div'>
@@ -20,22 +21,26 @@ const Navbar = () => {
                 </li>
                 <li className='middle-one-div'>
                     <input type="text" className='input-box' placeholder='Search items' onChange={(event) => {
-                        dispatch({ type: 'USER_INPUT', payload: event.target.value})
+                        dispatch({ type: 'USER_INPUT', payload: event.target.value })
                     }} />
                 </li>
                 <li className='rightside-div'>
                     <div className='components'>
-                        <NavLink to='login' className='navlogin-btn'>Login</NavLink>
+                        {
+                            state?.userDetails ? (
+                                <NavLink to='/user-profile' className='navlogin-btn'>Profile</NavLink>) : (
+                                <NavLink to='/login' className='navlogin-btn'>Login</NavLink>)
+                        }
                         <NavLink to='products' className='navlogin-btn'>Shop</NavLink>
                         <Badge className='mui-icons' badgeContent={4} color="error">
                             <Favorite className='icon' onClick={() => {
                                 navigate('/wishlist')
                             }} />
                         </Badge>
-                        <Badge  className='mui-icons' badgeContent={4} color="error">
+                        <Badge className='mui-icons' badgeContent={4} color="error">
                             <ShoppingCart className='icon' onClick={() => {
-                            navigate('/cart')
-                        }} />
+                                navigate('/cart')
+                            }} />
                         </Badge>
                     </div>
                 </li>

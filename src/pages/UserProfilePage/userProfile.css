@@ -1,0 +1,35 @@
+.user-profile-div {
+  display: flex;
+  justify-content: center;
+  height: 430px;
+}
+
+.user-profile-details-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  width: 300px;
+}
+
+.logout-btn {
+    background-color: #60a5fa;
+    color: white;
+    text-decoration: none;
+    width: 4rem;
+    height: 29px;
+    text-align: center;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+
+.btn-div {
+    display: flex;
+    justify-content: center;
+}

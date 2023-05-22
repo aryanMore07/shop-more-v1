@@ -33,6 +33,10 @@ export const FilteredDataProvider = ({ children }) => {
                 return {
                     ...state, sortInput: action.payload
                 }
+            case 'UPDATE_USERS_LOGIN':
+                return {
+                    ...state, userDetails: action.payload
+                }
             
             default:
                 return state;
@@ -59,8 +63,10 @@ export const FilteredDataProvider = ({ children }) => {
         priceInput: '',
         dropboxInput: '',
         sortInput: '',
+        userDetails: '',
     })
 
+    console.log(state.userDetails)
 
     const filterBySearch = state.searchInput ? state.productsData.filter(({name}) => name.toLowerCase().includes(state.searchInput)) : state.productsData
 
@@ -71,8 +77,6 @@ export const FilteredDataProvider = ({ children }) => {
     const filterByRatings = state.ratingInput ? filterByCategory.filter(({rating}) => rating > Number(state.ratingInput)) : filterByCategory
 
     const filterBySort = state.sortInput ? filterByRatings.sort((itemOne, itemTwo) => state.sortInput === 'LOW_TO_HIGH' ? (itemOne.price - itemTwo.price) : itemTwo.price - itemOne.price) : filterByRatings
-
-    console.log(state.sortInput);
 
     return (
         <FilteredDataContext.Provider value={{ state, dispatch, filterBySearch, filterByPrice, filterByCategory, filterByRatings, filterBySort }}>{children}</FilteredDataContext.Provider>

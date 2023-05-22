@@ -6,11 +6,11 @@ import Cart from './pages/cartPage/CartPage';
 import ProductListing from './pages/productListingpage/ProductListPage';
 import Wishlist from './pages/wishlistPage/WishlistPage';
 import IndividualProduct from './pages/individualProductPage/IndividualProductPage';
-import Login from './pages/loginPage/LoginPage';
-import Signup from './pages/sigupPage/SignupPage';
 import RequireAuth from './auth/RequireAuth';
 import MockmanComponent from './pages/mockman/Mockman';
 import ErrorPage from './pages/errorPage/ErrorPage';
+import Authentication from './pages/loginPage/Authentication';
+import UserProfile from './pages/UserProfilePage/UserProfilePage';
 
 function App() {
   return (
@@ -28,10 +28,12 @@ function App() {
             <Wishlist />
           </RequireAuth>
         } />
+        <Route path='/user-profile' element={<RequireAuth>
+          <UserProfile />
+        </RequireAuth>} />
         <Route path='/products' element={<ProductListing />} />
         <Route path='/products/:productId' element={<IndividualProduct />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/signup' element={<Signup />} />
+        <Route path='/login' element={<Authentication />} />
         <Route path='/mockman' element={<MockmanComponent />} />
         <Route path='/*' element={<ErrorPage />} />
       </Routes>
