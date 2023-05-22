@@ -66,8 +66,6 @@ export const FilteredDataProvider = ({ children }) => {
         userDetails: '',
     })
 
-    console.log(state.userDetails)
-
     const filterBySearch = state.searchInput ? state.productsData.filter(({name}) => name.toLowerCase().includes(state.searchInput)) : state.productsData
 
     const filterByPrice = state.priceInput ? filterBySearch.filter(({price}) => price >= Number(state.priceInput)) : filterBySearch
