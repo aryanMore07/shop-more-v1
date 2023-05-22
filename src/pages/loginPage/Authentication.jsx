@@ -69,13 +69,13 @@ const Authentication = () => {
             <h1>Login</h1>
             <div className='input-div'>
               <label htmlFor="email">
-                <p>Email Address</p>
+                <span><p>Email Address</p></span>
                 <input placeholder='Enter email' className='user-input' type="email" id='email' onChange={(event) => {
                   setLoginEmail(event.target.value);
                 }} />
               </label>
               <label htmlFor="password">
-                <p>Password</p>
+                <span><p>Password</p></span>
                 <input placeholder='Enter password' className='user-input' type="password" id='password' onChange={(event) => {
                   setLoginPassword(event.target.value)
                 }} />
@@ -91,25 +91,25 @@ const Authentication = () => {
             <h1>Signup</h1>
             <div className='input-div'>
               <label htmlFor="firstName">
-                <p>FirstName</p>
+                <span><p>FirstName</p></span>
                 <input placeholder='Enter First Name' className='user-input' type="text" id='firstName' onChange={(event) => {
                   setFirstName(event.target.value);
                 }} />
               </label>
               <label htmlFor="lastName">
-                <p>Last Name</p>
+                <span><p>Last Name</p></span>
                 <input placeholder='Enter Last Name' className='user-input' type="text" id='lastName' onChange={(event) => {
                   setLastName(event.target.value)
                 }} />
               </label>
               <label htmlFor="email">
-                <p>Email Address</p>
+                <span><p>Email Address</p></span>
                 <input placeholder='Enter email' className='user-input' type="email" id='email' onChange={(event) => {
                   setEmail(event.target.value);
                 }} />
               </label>
               <label htmlFor="password">
-                <p>Password</p>
+                <span><p>Password</p></span>
                 <input placeholder='Enter password' className='user-input' type="password" id='password' onChange={(event) => {
                   setPasswordName(event.target.value);
                 }} />
