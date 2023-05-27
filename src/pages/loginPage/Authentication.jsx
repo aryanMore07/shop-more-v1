@@ -26,6 +26,7 @@ const Authentication = () => {
       if(response.status === 200) {
         alert('Login successful');
       }
+      localStorage.setItem('token', response.data.encodedToken)
       dispatch({ type: 'UPDATE_USERS_LOGIN', payload: response.data.foundUser });
       navigate(location?.state?.from?.pathname)
 

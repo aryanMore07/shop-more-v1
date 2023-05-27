@@ -29,6 +29,7 @@ export const FilteredDataProvider = ({ children }) => {
         dropboxInput: '',
         sortInput: '',
         userDetails: '',
+        cartData: [],
     })
 
     const filterBySearch = state.searchInput ? state.productsData.filter(({name}) => name.toLowerCase().includes(state.searchInput)) : state.productsData

@@ -1,5 +1,3 @@
-import { v4 as uuid } from "uuid";
-
 /**
  uuid() Product Database can be added here.
  * You can add products of your wish with different attributes
@@ -7,7 +5,7 @@ import { v4 as uuid } from "uuid";
 
  export const products = [
   {
-    _id: uuid(),
+    _id: '427dd8c4-fa2c-11ed-be56-0242ac120002',
     name: "Smartphone",
     category: "Electronics",
     inStock: true,
@@ -16,7 +14,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.2
   },
   {
-    _id: uuid(),
+    _id: '505d8732-fa2c-11ed-be56-0242ac120002',
     name: "Laptop",
     category: "Electronics",
     inStock: true,
@@ -25,7 +23,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.8
   },
   {
-    _id: uuid(),
+    _id: "620bbddc-fa2c-11ed-be56-0242ac120002",
     name: "Headphones",
     category: "Electronics",
     inStock: true,
@@ -34,7 +32,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.1
   },
   {
-    _id: uuid(),
+    _id: "6bbe49c6-fa2c-11ed-be56-0242ac120002",
     name: "Television",
     category: "Electronics",
     inStock: true,
@@ -43,7 +41,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.6
   },
   {
-    _id: uuid(),
+    _id: '757d2130-fa2c-11ed-be56-0242ac120002',
     name: "Gaming Chair",
     category: "Furniture",
     inStock: true,
@@ -52,7 +50,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.5
   },
   {
-    _id: uuid(),
+    _id: '7d8927b6-fa2c-11ed-be56-0242ac120002',
     name: "Tablet",
     category: "Electronics",
     inStock: true,
@@ -61,7 +59,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.3
   },
   {
-    _id: uuid(),
+    _id: "8317f2de-fa2c-11ed-be56-0242ac120002",
     name: "Soundbar",
     category: "Electronics",
     inStock: true,
@@ -70,7 +68,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.4
   },
   {
-    _id: uuid(),
+    _id: '88a890fa-fa2c-11ed-be56-0242ac120002',
     name: "Desktop Computer",
     category: "Electronics",
     inStock: true,
@@ -79,7 +77,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.7
   },
   {
-    _id: uuid(),
+    _id: "93af1ca8-fa2c-11ed-be56-0242ac120002",
     name: "Smartwatch",
     category: "Electronics",
     inStock: true,
@@ -88,7 +86,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.0
   },
   {
-    _id: uuid(),
+    _id: "9afb2a92-fa2c-11ed-be56-0242ac120002",
     name: "Wireless Earbuds",
     category: "Electronics",
     inStock: true,
@@ -97,7 +95,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.2
   },
   {
-    _id: uuid(),
+    _id: "a19d2d1e-fa2c-11ed-be56-0242ac120002",
     name: "Sofa",
     category: "Furniture",
     inStock: true,
@@ -106,7 +104,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.6
   },
   {
-    _id: uuid(),
+    _id: "a72ddd00-fa2c-11ed-be56-0242ac120002",
     name: "Dining Table",
     category: "Furniture",
     inStock: true,
@@ -115,7 +113,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.3
   },
   {
-    _id: uuid(),
+    _id: "ad5d2442-fa2c-11ed-be56-0242ac120002",
     name: "Recliner Chair",
     category: "Furniture",
     inStock: true,
@@ -124,7 +122,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.8
   },
   {
-    _id: uuid(),
+    _id: "b2b6437e-fa2c-11ed-be56-0242ac120002",
     name: "Air Conditioner",
     category: "Electronics",
     inStock: true,
@@ -133,7 +131,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.5
   },
   {
-    _id: uuid(),
+    _id: "b8c4d0a0-fa2c-11ed-be56-0242ac120002",
     name: "Blender",
     category: "Appliances",
     inStock: true,
@@ -142,7 +140,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.1
   },
   {
-    _id: uuid(),
+    _id: "bfba02ae-fa2c-11ed-be56-0242ac120002",
     name: "Washing Machine",
     category: "Appliances",
     inStock: true,
@@ -151,7 +149,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.6
   },
   {
-    _id: uuid(),
+    _id: "1df64e71-9893-492f-a6a5-1a194e56725d",
     name: "T-Shirt",
     category: "Cloths",
     inStock: true,
@@ -160,7 +158,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.2
   },
   {
-    _id: uuid(),
+    _id: "9ce8c347-c87b-4e8f-8217-9f2b8abe86cc",
     name: "Jeans",
     category: "Cloths",
     inStock: true,
@@ -169,7 +167,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.4
   },
   {
-    _id: uuid(),
+    _id: "6ceb19d1-7f0c-4465-9392-2bf95bec6e01",
     name: "Dress",
     category: "Cloths",
     inStock: true,
@@ -178,7 +176,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.3
   },
   {
-    _id: uuid(),
+    _id: "401b42da-7d67-4231-8c74-5da705568c80",
     name: "Shoes",
     category: "Cloths",
     inStock: true,
@@ -187,7 +185,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.7
   },
   {
-    _id: uuid(),
+    _id: "8818ed14-e73d-4288-9c36-8082602d84c6",
     name: "Camera",
     category: "Electronics",
     inStock: true,
@@ -196,7 +194,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.5
   },
   {
-    _id: uuid(),
+    _id: "d87cd991-312a-45e8-a256-201d232e05c0",
     name: "Printer",
     category: "Electronics",
     inStock: true,
@@ -205,7 +203,7 @@ import { v4 as uuid } from "uuid";
     rating: 3.8
   },
   {
-    _id: uuid(),
+    _id: "e5338105-edb7-4276-a419-815f23b20ea5",
     name: "Office Chair",
     category: "Furniture",
     inStock: true,
@@ -214,7 +212,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.2
   },
   {
-    _id: uuid(),
+    _id: "2f4a56f3-172b-4c34-8eb8-a04716830f1b",
     name: "Bed",
     category: "Furniture",
     inStock: true,
@@ -223,7 +221,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.7
   },
   {
-    _id: uuid(),
+    _id: "cd0cd292-b3a5-4a89-9d24-bf0b99d688f5",
     name: "Watch",
     category: "Accessories",
     inStock: true,
@@ -232,7 +230,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.0
   },
   {
-    _id: uuid(),
+    _id: "883306a9-fbc9-404b-b2f4-1b7bca361bd7",
     name: "Microwave Oven",
     category: "Appliances",
     inStock: true,
@@ -241,7 +239,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.2
   },
   {
-    _id: uuid(),
+    _id: "4e8cf904-3dfb-47ab-95fb-99986b2ae971",
     name: "Handbag",
     category: "Cloths",
     inStock: true,
@@ -250,7 +248,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.5
   },
   {
-    _id: uuid(),
+    _id: "9c5cd9bc-1e6c-4fff-85d5-ddddff61e583",
     name: "TV Stand",
     category: "Furniture",
     inStock: true,
@@ -259,7 +257,7 @@ import { v4 as uuid } from "uuid";
     rating: 3.9
   },
   {
-    _id: uuid(),
+    _id: "9da0e73a-9606-4ace-97ef-58a4beeabe5b",
     name: "Sunglasses",
     category: "Accessories",
     inStock: true,
@@ -268,7 +266,7 @@ import { v4 as uuid } from "uuid";
     rating: 4.1
   },
   {
-    _id: uuid(),
+    _id: "9344005d-4d9c-4581-b231-3ce3f2ae86ba",
     name: "Jacket",
     category: "Cloths",
     inStock: true,

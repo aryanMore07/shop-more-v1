@@ -1,0 +1,209 @@
+/* Default styles for mobile devices */
+
+.cart-main-div {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.cart-card {
+  cursor: pointer;
+  position: relative;
+  width: 251px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.cart-img {
+  margin: 30px;
+  height: 250px;
+  width: 250px;
+}
+
+.cart-heading {
+  text-align: center;
+}
+
+.cart-inner-divs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 12rem;
+}
+
+.remove-from-cart {
+  cursor: pointer;
+  border: none;
+  background-color: #3b82f5;
+  color: whitesmoke;
+  border-radius: 5px;
+  font-size: 18px;
+  width: 150px;
+  height: 35px;
+  font-weight: 600;
+}
+
+.remove-from-cart:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* Styles for tablets (portrait) and up */
+@media (min-width: 768px) {
+  .cart-main-div {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .cart-card {
+    cursor: pointer;
+    position: relative;
+    width: 251px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 15px;
+    border-radius: 5px;
+  }
+
+  .cart-img {
+    margin: 30px;
+    height: 250px;
+    width: 250px;
+  }
+
+  .cart-heading {
+    text-align: center;
+  }
+
+  .cart-inner-divs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 12rem;
+  }
+
+  .remove-from-cart {
+    cursor: pointer;
+    border: none;
+    background-color: #3b82f5;
+    color: whitesmoke;
+    border-radius: 5px;
+    font-size: 18px;
+    width: 150px;
+    height: 35px;
+    font-weight: 600;
+  }
+
+  .remove-from-cart:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+}
+
+/* Styles for laptops and up */
+@media screen and (min-width: 1024px) {
+  .cart-main-div {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .cart-card {
+    cursor: pointer;
+    position: relative;
+    width: 251px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 25px;
+  }
+
+  .cart-img {
+    margin: 30px;
+    height: 250px;
+    width: 250px;
+  }
+
+  .cart-heading {
+    text-align: center;
+  }
+
+  .cart-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cart-inner-divs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 12rem;
+  }
+
+  .remove-from-cart {
+    cursor: pointer;
+    border: none;
+    background-color: #3b82f5;
+    color: whitesmoke;
+    border-radius: 5px;
+    font-size: 18px;
+    width: 150px;
+    height: 35px;
+    font-weight: 600;
+  }
+
+  .remove-from-cart:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
+  .checkout-div {
+    width: 250px;
+    height: 250px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 5px;
+  }
+
+  .checkout-header {
+    text-align: center;
+  }
+
+  .price-info-div {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .checkout-btn {
+    cursor: pointer;
+    border: none;
+    background-color: #3b82f5;
+    color: whitesmoke;
+    border-radius: 5px;
+    font-size: 18px;
+    width: 150px;
+    height: 35px;
+    font-weight: 600;
+  }
+  
+  .checkout-btn:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
+  .check-btn-div {
+    display: flex;
+    justify-content: center;
+  }
+
+}

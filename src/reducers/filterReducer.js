@@ -28,6 +28,10 @@ export const filterReducer = (state, action) => {
             return {
                 ...state, userDetails: action.payload
             }
+        case 'UPDATE_CART':
+            return {
+                ...state, cartData: action.payload
+            }
         
         default:
             return state;

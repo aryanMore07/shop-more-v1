@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 import './individualProduct.css';
 import { useParams } from 'react-router';
@@ -25,6 +26,7 @@ const IndividualProduct = () => {
   useEffect(() => {
     fetchProductDetail()
   }, [])
+  
   const { category, image, inStock, name, price } = product;
   return (
     <div>

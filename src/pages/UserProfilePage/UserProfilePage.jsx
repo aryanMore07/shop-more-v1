@@ -11,9 +11,9 @@ const UserProfile = () => {
         <div className='user-profile-div'>
             <div className='user-profile-details-div'>
                 <div className='user-info'>
-                    <p><b>First Name:</b> {state?.userDetails?.firstName}</p>
-                    <p><b>Last Name:</b> {state?.userDetails?.lastName}</p>
-                    <p><b>Email:</b> {state?.userDetails?.email}</p>
+                    <p className='user-profile-p' ><b>First Name:</b> {state?.userDetails?.firstName}</p>
+                    <p className='user-profile-p' ><b>Last Name:</b> {state?.userDetails?.lastName}</p>
+                    <p className='user-profile-p' ><b>Email:</b> {state?.userDetails?.email}</p>
                 </div>
                 <div className='btn-div'>
                     <button className='logout-btn' onClick={() => {
