@@ -5,11 +5,13 @@ import { Favorite, ShoppingCart } from '@mui/icons-material';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { FilteredDataContext } from '../../contexts/FilteredDataContext';
+import { CartDataContext } from '../../contexts/cartDataContext';
 
 const Navbar = () => {
 
     const navigate = useNavigate();
     const { state, dispatch } = useContext(FilteredDataContext);
+    const { cartData } = useContext(CartDataContext);
 
 
     return (
@@ -37,7 +39,7 @@ const Navbar = () => {
                                 navigate('/wishlist')
                             }} />
                         </Badge>
-                        <Badge className='mui-icons' badgeContent={4} color="error">
+                        <Badge className='mui-icons' badgeContent={cartData.length} color="error">
                             <ShoppingCart className='icon' onClick={() => {
                                 navigate('/cart')
                             }} />
