@@ -6,12 +6,14 @@ import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { FilteredDataContext } from '../../contexts/FilteredDataContext';
 import { CartDataContext } from '../../contexts/cartDataContext';
+import { WishlistDataContext } from '../../contexts/wishlistDataContext';
 
 const Navbar = () => {
 
     const navigate = useNavigate();
     const { state, dispatch } = useContext(FilteredDataContext);
     const { cartData } = useContext(CartDataContext);
+    const { wishlistData } = useContext(WishlistDataContext);
 
 
     return (
@@ -34,7 +36,7 @@ const Navbar = () => {
                                 <NavLink to='/login' className='navlogin-btn'>Login</NavLink>)
                         }
                         <NavLink to='products' className='navlogin-btn'>Shop</NavLink>
-                        <Badge className='mui-icons' badgeContent={4} color="error">
+                        <Badge className='mui-icons' badgeContent={wishlistData.length} color="error">
                             <Favorite className='icon' onClick={() => {
                                 navigate('/wishlist')
                             }} />

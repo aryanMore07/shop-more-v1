@@ -67,11 +67,55 @@ export const CartDataProvider = ({children}) => {
         }
     }
 
+    const increaseCartQty = async (itemId) => {
+        const token = localStorage.getItem("token");
+        try {
+            const response = await axios.post(`/api/user/cart/${itemId}`, 
+            {
+                action: {
+                    type: "increment"
+                  }
+            }, 
+            {
+                headers: {
+                    authorization: token
+                }
+            });
+            if(response.status === 200 || response.status ===201) {
+                setCartData(response.data.cart)
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const decreaseCartQty = async (itemId) => {
+        const token = localStorage.getItem("token");
+        try {
+            const response = await axios.post(`/api/user/cart/${itemId}`, 
+            {
+                action: {
+                    type: "decrement"
+                  }
+            }, 
+            {
+                headers: {
+                    authorization: token
+                }
+            });
+            if(response.status === 200 || response.status ===201) {
+                setCartData(response.data.cart)
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     useEffect(() => {
         fetchCartData();
     }, [])
 
     return (
-        <CartDataContext.Provider value={{cartData, addToCart, removeFromCart}}>{children}</CartDataContext.Provider>
+        <CartDataContext.Provider value={{cartData, addToCart, removeFromCart, increaseCartQty, decreaseCartQty}}>{children}</CartDataContext.Provider>
     )
 }

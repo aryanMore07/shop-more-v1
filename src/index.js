@@ -1,13 +1,15 @@
 import React from "react";
-import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
+import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-import { FilteredDataContext, FilteredDataProvider } from "./contexts/FilteredDataContext";
 import { CartDataContext, CartDataProvider } from "./contexts/cartDataContext";
-export { FilteredDataContext }
+import { FilteredDataContext, FilteredDataProvider } from "./contexts/FilteredDataContext";
+import { WishlistDataContext, WishlistDataProvider } from "./contexts/wishlistDataContext";
 export { CartDataContext }
+export { FilteredDataContext }
+export { WishlistDataContext }
 
 // Call make Server
 makeServer();
@@ -17,9 +19,11 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <FilteredDataProvider>
-        <CartDataProvider>
-          <App />
-        </CartDataProvider>
+        <WishlistDataProvider>
+          <CartDataProvider>
+            <App />
+          </CartDataProvider>
+        </WishlistDataProvider>
       </FilteredDataProvider>
     </BrowserRouter>
   </React.StrictMode>

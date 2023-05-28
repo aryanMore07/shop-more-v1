@@ -2,13 +2,16 @@ import React from 'react';
 import './cartPage.css';
 import { useContext } from 'react';
 import { CartDataContext } from '../../contexts/cartDataContext';
-// import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import { WishlistDataContext } from '../../contexts/wishlistDataContext';
 
 const Cart = () => {
 
-    const { cartData, addToCart, removeFromCart } = useContext(CartDataContext);
+    const { cartData, removeFromCart, increaseCartQty, decreaseCartQty } = useContext(CartDataContext);
+    const { wishlistData, addToWishlist, removeFromWishlist } = useContext(WishlistDataContext);
 
-    const totalPrice = cartData.reduce((acc, curr) => acc + curr.price, 0)
+    const itemOnWishlist = (itemId) => wishlistData.find(({ _id }) => _id === itemId);
+    const totalPrice = cartData.reduce((acc, curr) => acc + curr.price * curr.qty, 0)
 
     return (
         <>
@@ -18,17 +21,23 @@ const Cart = () => {
                         <div className='cart-div'>
                             {
                                 cartData.map((item) => {
-                                    const { _id, name, price, inStock, category, image, rating } = item;
+                                    const { _id, name, price, inStock, category, image, rating, qty } = item;
                                     return (
-                                        <>
-                                            <div>
-                                                <div key={_id} className='cart-card' onClick={() => {
-                                                    // navigate(`/products/${_id}`)
-                                                }}>
-                                                    <img className='cart-img ' src={image} alt="cart" />
-                                                    {/* <div className='wishlist-btn'>
-                                    <FavoriteIcon style={{ color: 'red' }} />
-                                </div> */}
+                                        <div style={{ padding: '30px' }} key={_id} >
+                                            <div className='cart-card'>
+                                                <></>
+                                                <img className='cart-img ' src={image} alt="cart" />
+                                                <div className='wishlist-btn'>
+                                                    {
+                                                        itemOnWishlist(_id) ? <FavoriteIcon style={{ color: 'red' }} onClick={() => {
+                                                            removeFromWishlist(_id)
+                                                        }} /> : <FavoriteIcon style={{ color: 'white' }} onClick={() => {
+                                                            addToWishlist(item);
+                                                        }} />
+                                                    }
+                                                </div>
+                                                <div className='cart-info-div'>
+
                                                     <div className='cart-inner-divs'>
                                                         <h3>{name}</h3>
                                                         <p>₹ {price}</p>
@@ -37,6 +46,17 @@ const Cart = () => {
                                                         <p>{category}</p>
                                                         <p style={{ color: inStock ? 'green' : 'red' }}>{inStock ? 'In Stock' : 'Out of Stock'}</p>
                                                     </div>
+
+                                                    <div className='cart-qty-div'>
+                                                        <button className='qty-btns' disabled={qty > 1 ? false : true} style={{cursor: qty > 1 ? "pointer" : "no-drop"}} onClick={()=> {
+                                                            decreaseCartQty(_id);
+                                                        }}>-</button>
+                                                        <input className='cart-qty' type="text" value={qty} />
+                                                        <button className='qty-btns' onClick={() => {
+                                                            increaseCartQty(_id);
+                                                        }}>+</button>
+                                                    </div>
+
                                                     <div>
                                                         <button className='remove-from-cart' onClick={() => {
                                                             removeFromCart(_id);
@@ -44,7 +64,7 @@ const Cart = () => {
                                                     </div>
                                                 </div>
                                             </div>
-                                        </>
+                                        </div>
                                     )
                                 })
                             }

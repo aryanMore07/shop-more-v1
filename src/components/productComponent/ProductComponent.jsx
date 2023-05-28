@@ -2,14 +2,16 @@ import React, { useContext } from 'react';
 import './productComponent.css';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { CartDataContext } from '../../contexts/cartDataContext';
+import { WishlistDataContext } from '../../contexts/wishlistDataContext';
 
 
 export const ProductComponent = ({ items }) => {
 
     const { cartData, addToCart } = useContext(CartDataContext); 
+    const { wishlistData, addToWishlist, removeFromWishlist } = useContext(WishlistDataContext);
 
-    const itemOnCart = (itemId) => cartData.find(({_id}) => _id === itemId)
-    
+    const itemOnCart = (itemId) => cartData.find(({_id}) => _id === itemId);
+    const itemOnWishlist = (itemId) => wishlistData.find(({_id}) => _id === itemId);
     const { _id, name, price, inStock, category, image } = items;
     return (
         <div key={_id} className='product-card' onClick={() => {
@@ -17,7 +19,15 @@ export const ProductComponent = ({ items }) => {
         }}>
             <img className='product-img ' src={image} alt="product" />
             <div className='wishlist-btn'>
-                <FavoriteIcon style={{ color: 'red' }} />
+
+                {
+                    itemOnWishlist(_id) ? <FavoriteIcon style={{color: 'red'}} onClick={() => {
+                        removeFromWishlist(_id) 
+                    }} /> : <FavoriteIcon style={{color: 'white'}} onClick={() => {
+                        addToWishlist(items);
+                    }}  />
+                }
+                
             </div>
             <div className='inner-divs'>
                 <h3>{name}</h3>
@@ -27,7 +37,7 @@ export const ProductComponent = ({ items }) => {
                 <p>{category}</p>
                 <p style={{ color: inStock ? 'green' : 'red' }}>{inStock ? 'In Stock' : 'Out of Stock'}</p>
             </div>
-            <button disabled={itemOnCart(_id) ? true : false} className='add-to-cart' onClick={() => {
+            <button disabled={itemOnCart(_id) ? true : false} style={{cursor: itemOnCart(_id) ? "no-drop" : "pointer"}} className='add-to-cart' onClick={() => {
                 addToCart(items);
             }}>{itemOnCart(_id) ? "Added to Cart" : "Add To Cart"}</button>
         </div>

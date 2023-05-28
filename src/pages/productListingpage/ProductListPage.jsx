@@ -24,11 +24,11 @@ const ProductListing = () => {
             <div className='product-listing'>
                 <aside className='side-bar'>
                     <div className='first-div'>
-                        <p>Filter</p>
+                        <div><p>Filter</p></div>
                         <button className='clear-btn' onClick={clearFilterHandler}>Clear</button>
                     </div>
                     <div className='second-div'>
-                        <p className='price-filter-tag'> <b>Price</b> <b><p>{value}</p></b></p>
+                        <div><p className='price-filter-tag'> <b>Price</b> <b><p>{value}</p></b></p></div>
                         <input value={value} min='500' max='50000' type="range" id='price-sort' onChange={(event) => {
                             setValue(event.target.value);
                             dispatch({type: 'PRICE_INPUT', payload: event.target.value })
