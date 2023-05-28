@@ -2,6 +2,7 @@ import React from 'react';
 import './userProfile.css';
 import { useContext } from 'react';
 import { FilteredDataContext } from '../../contexts/FilteredDataContext';
+import { toast } from 'react-toastify';
 
 const UserProfile = () => {
 
@@ -19,6 +20,16 @@ const UserProfile = () => {
                     <button className='logout-btn' onClick={() => {
                         dispatch({ type: 'UPDATE_USERS_LOGIN', payload: '' })
                         dispatch({ type: 'UPDATE_USERS_TOKEN', payload: '' })
+                        toast.success('Logged out successful', {
+                            position: "top-center",
+                            autoClose: 750,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "light",
+                        });
                     }}>Logout</button>
                 </div>
             </div>

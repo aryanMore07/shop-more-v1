@@ -19,6 +19,7 @@ const Cart = () => {
                 cartData.length === 0 ? (<h1>No Items in cart</h1>) : (<> <h2 className='cart-heading'>MY CART ({cartData.length})</h2>
                     <div className='cart-main-div'>
                         <div className='cart-div'>
+                            
                             {
                                 cartData.map((item) => {
                                     const { _id, name, price, inStock, category, image, rating, qty } = item;
@@ -48,7 +49,7 @@ const Cart = () => {
                                                     </div>
 
                                                     <div className='cart-qty-div'>
-                                                        <button className='qty-btns' disabled={qty > 1 ? false : true} style={{cursor: qty > 1 ? "pointer" : "no-drop"}} onClick={()=> {
+                                                        <button className='qty-btns' disabled={qty > 1 ? false : true} style={{ cursor: qty > 1 ? "pointer" : "no-drop" }} onClick={() => {
                                                             decreaseCartQty(_id);
                                                         }}>-</button>
                                                         <input className='cart-qty' type="text" value={qty} />

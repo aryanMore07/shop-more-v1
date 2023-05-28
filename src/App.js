@@ -11,7 +11,8 @@ import MockmanComponent from './pages/mockman/Mockman';
 import ErrorPage from './pages/errorPage/ErrorPage';
 import Authentication from './pages/loginPage/Authentication';
 import UserProfile from './pages/UserProfilePage/UserProfilePage';
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
     <div className="App">
@@ -39,6 +40,7 @@ function App() {
         <Route path='/mockman' element={<MockmanComponent />} />
         <Route path='/*' element={<ErrorPage />} />
       </Routes>
+      <ToastContainer />
     </div>
   );
 }

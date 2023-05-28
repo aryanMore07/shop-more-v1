@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import { createContext } from "react";
+import { toast } from "react-toastify";
 
 export const WishlistDataContext = createContext();
 
@@ -41,6 +42,16 @@ export const WishlistDataProvider = ({children}) => {
             )
             if(response.status === 200 || response.status === 201) {
                 setWishlistData(response.data.wishlist);
+                toast.success('Added to wishlist 😃', {
+                    position: "top-center",
+                    autoClose: 750,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    });
             }
 
         } catch (error) {
@@ -60,6 +71,16 @@ export const WishlistDataProvider = ({children}) => {
             )
             if(response.status === 200 || response.status === 201) {
                 setWishlistData(response.data.wishlist);
+                toast.info('Removed from cart!', {
+                    position: "top-center",
+                    autoClose: 750,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    });
             }
 
         } catch (error) {

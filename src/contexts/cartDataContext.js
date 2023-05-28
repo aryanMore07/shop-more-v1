@@ -2,6 +2,8 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
 import { createContext } from "react";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const CartDataContext = createContext();
 
@@ -41,7 +43,16 @@ export const CartDataProvider = ({children}) => {
             );
             if(response.status === 200 || response.status === 201) {
                 setCartData(response.data.cart);
-                // Add a toast message here for add to cart 
+                toast.success('Added to Cart 😃', {
+                    position: "top-center",
+                    autoClose: 750,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    });
             }
         } catch (error) {
             console.log(error)
@@ -60,7 +71,16 @@ export const CartDataProvider = ({children}) => {
             )
             if(response.status === 200 || response.status === 201) {
                 setCartData(response.data.cart);
-                // Add a toast message here for remove from cart
+                toast.info('Removed from cart', {
+                    position: "top-center",
+                    autoClose: 750,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    });
             }
         } catch (error) {
             

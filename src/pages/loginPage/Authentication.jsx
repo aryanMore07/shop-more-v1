@@ -6,6 +6,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useContext } from 'react';
 import { FilteredDataContext } from '../../contexts/FilteredDataContext';
+import { toast } from 'react-toastify';
 
 const Authentication = () => {
 
@@ -24,15 +25,47 @@ const Authentication = () => {
         password: loginPassword
       })
       if(response.status === 200) {
-        alert('Login successful');
+        toast.success('Login successful', {
+          position: "top-center",
+          autoClose: 750,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });
       }
       localStorage.setItem('token', response.data.encodedToken)
       dispatch({ type: 'UPDATE_USERS_LOGIN', payload: response.data.foundUser });
-      navigate(location?.state?.from?.pathname)
+      navigate(location?.state?.from?.pathname || '/');
 
 
     } catch (error) {
-      console.log(error);
+      console.log()
+      if(error.response.status === 401) {
+        toast.error('Please enter valid credentials', {
+          position: "top-center",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });
+      } else if(error.response.status === 404) {
+        toast.error('Entered credentials not found. Please signup first! ', {
+          position: "top-center",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });
+      }
     }
   }
 
@@ -45,19 +78,63 @@ const Authentication = () => {
 
   const signUpHandler = async () => {
     try {
-      const response = await axios.post('/api/auth/signup', {
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        password: password
-      });
-      if(response.status === 200) {
-        alert('Signup successful');
+      if(firstName && lastName && email && password) {
+        const response = await axios.post('/api/auth/signup', {
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+          password: password
+        });
+        if(response.status === 200) {
+          toast.success('Signup successful', {
+            position: "top-center",
+            autoClose: 750,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });
+        }
+        setLoginComponent(loginComponent => !loginComponent)
+        localStorage.setItem('token', response.data.encodedToken)
+      } else {
+        toast.warn('Please input all fields', {
+          position: "top-center",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });
       }
-      setLoginComponent(loginComponent => !loginComponent)
-      localStorage.setItem('token', response.data.encodedToken)
     } catch (error) {
-      console.log(error)
+      if(error.response.status === 422) {
+        toast.error('Email already exist', {
+          position: "top-center",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });
+      } else {
+        toast.error('Something went wrong try again later', {
+          position: "top-center",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });
+      }
     }
   }
 
