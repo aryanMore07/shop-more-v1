@@ -42,7 +42,7 @@ const Authentication = () => {
 
 
     } catch (error) {
-      console.log()
+      console.log(error);
       if(error.response.status === 401) {
         toast.error('Please enter valid credentials', {
           position: "top-center",
@@ -100,6 +100,7 @@ const Authentication = () => {
         setLoginComponent(loginComponent => !loginComponent)
         localStorage.setItem('token', response.data.encodedToken)
       } else {
+        
         toast.warn('Please input all fields', {
           position: "top-center",
           autoClose: 1000,
@@ -112,6 +113,7 @@ const Authentication = () => {
           });
       }
     } catch (error) {
+      console.log(error);
       if(error.response.status === 422) {
         toast.error('Email already exist', {
           position: "top-center",
