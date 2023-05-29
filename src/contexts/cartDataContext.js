@@ -24,7 +24,7 @@ export const CartDataProvider = ({children}) => {
 
             setCartData(response.data.cart);
         } catch (error) {
-            console.log(error)
+            
         }
     }
 
@@ -55,7 +55,7 @@ export const CartDataProvider = ({children}) => {
                     });
             }
         } catch (error) {
-            console.log(error)
+            
         }
     }
 
@@ -105,7 +105,7 @@ export const CartDataProvider = ({children}) => {
                 setCartData(response.data.cart)
             }
         } catch (error) {
-            console.log(error)
+            
         }
     }
 
@@ -127,7 +127,7 @@ export const CartDataProvider = ({children}) => {
                 setCartData(response.data.cart)
             }
         } catch (error) {
-            console.log(error)
+            
         }
     }
 

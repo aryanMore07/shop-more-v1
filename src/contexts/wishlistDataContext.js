@@ -23,7 +23,7 @@ export const WishlistDataProvider = ({children}) => {
                 setWishlistData(response.data.wishlist);
             }
         } catch (error) {
-            console.log(error)
+            
         }
     }
 

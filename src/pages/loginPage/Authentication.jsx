@@ -35,6 +35,8 @@ const Authentication = () => {
           progress: undefined,
           theme: "light",
           });
+          setLoginEmail("");
+          setLoginPassword("");
       }
       localStorage.setItem('token', response.data.encodedToken)
       dispatch({ type: 'UPDATE_USERS_LOGIN', payload: response.data.foundUser });
@@ -42,7 +44,6 @@ const Authentication = () => {
 
 
     } catch (error) {
-      console.log(error);
       if(error.response.status === 401) {
         toast.error('Please enter valid credentials', {
           position: "top-center",
@@ -74,7 +75,7 @@ const Authentication = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
-  const [password, setPasswordName] = useState('');
+  const [password, setPassword] = useState('');
 
   const signUpHandler = async () => {
     try {
@@ -85,7 +86,7 @@ const Authentication = () => {
           email: email,
           password: password
         });
-        if(response.status === 200) {
+        if(response.status === 200 || response.status === 201) {
           toast.success('Signup successful', {
             position: "top-center",
             autoClose: 750,
@@ -96,11 +97,14 @@ const Authentication = () => {
             progress: undefined,
             theme: "light",
             });
+            setFirstName('')
+            setLastName('')
+            setEmail('')
+            setPassword('')
         }
         setLoginComponent(loginComponent => !loginComponent)
         localStorage.setItem('token', response.data.encodedToken)
       } else {
-        
         toast.warn('Please input all fields', {
           position: "top-center",
           autoClose: 1000,
@@ -113,7 +117,6 @@ const Authentication = () => {
           });
       }
     } catch (error) {
-      console.log(error);
       if(error.response.status === 422) {
         toast.error('Email already exist', {
           position: "top-center",
@@ -150,13 +153,13 @@ const Authentication = () => {
             <div className='input-div'>
               <label htmlFor="email">
                 <span><p>Email Address</p></span>
-                <input placeholder='Enter email' className='user-input' type="email" id='email' onChange={(event) => {
+                <input placeholder='Enter email' className='user-input' type="email" id='email' value={loginEmail} onChange={(event) => {
                   setLoginEmail(event.target.value);
                 }} />
               </label>
               <label htmlFor="password">
                 <span><p>Password</p></span>
-                <input placeholder='Enter password' className='user-input' type="password" id='password' onChange={(event) => {
+                <input placeholder='Enter password' className='user-input' type="password" id='password' value={loginPassword} onChange={(event) => {
                   setLoginPassword(event.target.value)
                 }} />
               </label>
@@ -172,26 +175,26 @@ const Authentication = () => {
             <div className='input-div'>
               <label htmlFor="firstName">
                 <span><p>FirstName</p></span>
-                <input placeholder='Enter First Name' className='user-input' type="text" id='firstName' onChange={(event) => {
+                <input placeholder='Enter First Name' className='user-input' type="text" id='firstName' value={firstName} onChange={(event) => {
                   setFirstName(event.target.value);
                 }} />
               </label>
               <label htmlFor="lastName">
                 <span><p>Last Name</p></span>
-                <input placeholder='Enter Last Name' className='user-input' type="text" id='lastName' onChange={(event) => {
+                <input placeholder='Enter Last Name' className='user-input' type="text" id='lastName' value={lastName} onChange={(event) => {
                   setLastName(event.target.value)
                 }} />
               </label>
               <label htmlFor="email">
                 <span><p>Email Address</p></span>
-                <input placeholder='Enter email' className='user-input' type="email" id='email' onChange={(event) => {
+                <input placeholder='Enter email' className='user-input' type="email" id='email' value={email} onChange={(event) => {
                   setEmail(event.target.value);
                 }} />
               </label>
               <label htmlFor="password">
                 <span><p>Password</p></span>
-                <input placeholder='Enter password' className='user-input' type="password" id='password' onChange={(event) => {
-                  setPasswordName(event.target.value);
+                <input placeholder='Enter password' className='user-input' type="password" id='password' value={password} onChange={(event) => {
+                  setPassword(event.target.value);
                 }} />
               </label>
               <button className='signup-btn' onClick={signUpHandler}>signup</button>
