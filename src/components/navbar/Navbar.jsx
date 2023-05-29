@@ -20,8 +20,7 @@ const Navbar = () => {
         <div className='navbar-div'>
             <ul className='layout'>
                 <li className='leftside-div'>
-                    <Link className='navlogin-btn' to='/'><h2>Shop More</h2></Link>
-                    <Link className='navlogin-btn' to='/mockman'><h2>Mockman</h2></Link>
+                    <Link className='navlogin-btn heading-tag' to='/'><h2>Shop More</h2></Link>
                 </li>
                 <li className='middle-one-div'>
                     <input type="text" className='input-box' placeholder='Search items' onChange={(event) => {

@@ -1,5 +1,10 @@
 /* For Mobile view styling */
 
+.heading-tag {
+  font-family: "Open Sans", sans-serif;
+  font-family: "Racing Sans One", cursive;
+}
+
 .leftside-div {
   grid-area: leftDiv;
 }
@@ -85,6 +90,10 @@
 /* For Laptop and above */
 
 @media screen and (min-width: 768px) {
+  .heading-tag {
+    font-family: "Open Sans", sans-serif;
+    font-family: "Racing Sans One", cursive;
+  }
 
   .navbar-div {
     background-color: #3b82f6;
@@ -148,6 +157,11 @@
 }
 
 @media screen and (min-width: 1024px) {
+  .heading-tag {
+    font-family: "Open Sans", sans-serif;
+    font-family: "Racing Sans One", cursive;
+  }
+
   .navbar-div {
     background-color: #3b82f6;
     margin-top: -16px;

@@ -4,6 +4,9 @@ import { useContext } from 'react';
 import { CartDataContext } from '../../contexts/cartDataContext';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { WishlistDataContext } from '../../contexts/wishlistDataContext';
+import StripeCheckout from 'react-stripe-checkout';
+import COName from "../../images/android-chrome-512x512.png";
+import { toast } from 'react-toastify';
 
 const Cart = () => {
 
@@ -12,6 +15,32 @@ const Cart = () => {
 
     const itemOnWishlist = (itemId) => wishlistData.find(({ _id }) => _id === itemId);
     const totalPrice = cartData.reduce((acc, curr) => acc + curr.price * curr.qty, 0)
+
+    const onToken = (token) => {
+        if(token) {
+            toast.success('Thanks payment successful 😄', {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                }); 
+        }else {
+            toast.error('Sorry!, something went wrong please try again later ☹', {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
+        }
+    }
 
     return (
         <>
@@ -22,7 +51,7 @@ const Cart = () => {
                             
                             {
                                 cartData.map((item) => {
-                                    const { _id, name, price, inStock, category, image, rating, qty } = item;
+                                    const { _id, name, price, inStock, category, image, qty } = item;
                                     return (
                                         <div style={{ padding: '30px' }} key={_id} >
                                             <div className='cart-card'>
@@ -86,7 +115,14 @@ const Cart = () => {
                                     <h4>{totalPrice}</h4>
                                 </div>
                                 <div className='check-btn-div'>
-                                    <button className='checkout-btn'>Check out</button>
+                                    <StripeCheckout 
+                                        name="Shop More Co."
+                                        currency='INR'
+                                        amount={totalPrice * 100}
+                                        token={onToken}
+                                        image={COName}
+                                        stripeKey='pk_test_51MXmNSSF7VvGRN5rSjGRMGyWjWIWVK456JY8LBYuw025aPyMeNxyMKEixL6MIwgH5K9VW1zrCV04Nt4ayTFbIgA900uSgJcYyU'
+                                    />
                                 </div>
                             </div>
                         </div>
