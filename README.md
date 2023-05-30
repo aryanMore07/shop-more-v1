@@ -18,7 +18,7 @@ To install ShopMore, follow these steps:
 
 1. Clone this repository.
 2. Install react-router, react-router-dom, moack-man, miragejs, jwt-encode, dayjs and jwt-decode by running `npm install` in the project directory.
-3. Create a Environment Variable REACT_APP_JWT_SECRET='aryan’ in a `.env` file.
+3. Create a environment variable REACT_APP_JWT_SECRET='aryan’ in a `.env` file.
 4. Start the server by running `npm start`.
 5. Navigate to `http://localhost:3000` in your web browser to view the application.
 
