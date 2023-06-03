@@ -1,3 +1,4 @@
+
 export const filterReducer = (state, action) => {
     switch (action.type) {
         case 'GET_DATA':
@@ -15,6 +16,10 @@ export const filterReducer = (state, action) => {
         case 'DROPBOX_INPUT':
             return {
                 ...state, dropboxInput: action.payload
+            }
+        case 'CHECKBOX_INPUT':
+            return {
+                ...state, checkBoxInput: state.checkBoxInput.includes(action.payload) ? state.checkBoxInput.filter((category) => category !== action.payload) : [...state.checkBoxInput, action.payload]
             }
         case 'RATING_INPUT':
             return {
