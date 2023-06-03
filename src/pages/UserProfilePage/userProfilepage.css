@@ -1,0 +1,36 @@
+/* Default styles for mobile devices */
+.addressData-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-address {
+  width: 100%;
+}
+
+/* Styles for tablets (portrait) and up */
+@media (min-width: 768px) {
+  .addressData-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .user-address {
+    width: 40%;
+  }
+}
+
+/* Styles for laptops and up */
+@media screen and (min-width: 1024px) {
+  .addressData-div { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .user-address {
+    width: 40%;
+  }
+}

@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { useContext } from 'react';
 import { FilteredDataContext } from '../../contexts/FilteredDataContext';
 import { ProductComponent } from '../../components/productComponent/ProductComponent';
-import { useEffect } from 'react';
 
 const ProductListing = () => {
 

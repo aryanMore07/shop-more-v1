@@ -7,7 +7,9 @@ import { BrowserRouter } from "react-router-dom";
 import { CartDataContext, CartDataProvider } from "./contexts/cartDataContext";
 import { FilteredDataContext, FilteredDataProvider } from "./contexts/FilteredDataContext";
 import { WishlistDataContext, WishlistDataProvider } from "./contexts/wishlistDataContext";
+import { AddressContext, AddressProvider } from "./contexts/addressContext";
 export { CartDataContext }
+export { AddressContext }
 export { FilteredDataContext }
 export { WishlistDataContext }
 
@@ -21,12 +23,14 @@ root.render(
       <FilteredDataProvider>
         <WishlistDataProvider>
           <CartDataProvider>
-            <App />
+            <AddressProvider>
+              <App />
+            </AddressProvider>
           </CartDataProvider>
         </WishlistDataProvider>
       </FilteredDataProvider>
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode >
 );
 
 

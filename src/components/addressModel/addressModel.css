@@ -1,0 +1,21 @@
+/* Default styles for mobile devices */
+.address-div {
+  display: flex;
+  justify-content: center;
+}
+
+/* Styles for tablets (portrait) and up */
+@media (min-width: 768px) {
+  .address-div {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* Styles for laptops and up */
+@media screen and (min-width: 1024px) {
+  .address-div {
+    display: flex;
+    justify-content: center;
+  }
+}

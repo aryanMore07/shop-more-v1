@@ -1,0 +1,147 @@
+/* Default styles for mobile devices */
+.user-profile-div {
+    display: flex;
+    justify-content: center;
+    height: 430px;
+  }
+  
+  .user-profile-details-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 5px;
+    width: 360px;
+  }
+  
+  .user-info {
+    padding: 30px;
+  }
+  
+  .user-profile-p {
+    font-size: 18px;
+  }
+  
+  .logout-btn {
+    background-color: #3b82f6;
+    color: white;
+    text-decoration: none;
+    width: 5rem;
+    height: 40px;
+    text-align: center;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .logout-btn:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  
+  .btn-div {
+    display: flex;
+    justify-content: center;
+  }
+  /* Styles for tablets (portrait) and up */
+  @media (min-width: 768px) {
+    .user-profile-div {
+      display: flex;
+      justify-content: center;
+      height: 430px;
+    }
+  
+    .user-profile-details-div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: left;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      border-radius: 5px;
+      width: 360px;
+    }
+  
+    .user-info {
+      padding: 30px;
+    }
+  
+    .user-profile-p {
+      font-size: 18px;
+    }
+  
+    .logout-btn {
+      background-color: #3b82f6;
+      color: white;
+      text-decoration: none;
+      width: 5rem;
+      height: 40px;
+      text-align: center;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+    }
+  
+    .logout-btn:hover {
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+  
+    .btn-div {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  
+  /* Styles for laptops and up */
+  @media screen and (min-width: 1024px) {
+    .user-profile-div {
+      display: flex;
+      justify-content: center;
+      height: 430px;
+    }
+  
+    .user-profile-details-div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: left;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      border-radius: 5px;
+      width: 360px;
+    }
+  
+    .user-info {
+      padding: 30px;
+    }
+  
+    .user-profile-p {
+      font-size: 18px;
+    }
+  
+    .logout-btn {
+      background-color: #3b82f6;
+      color: white;
+      text-decoration: none;
+      width: 5rem;
+      height: 40px;
+      text-align: center;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+    }
+  
+    .logout-btn:hover {
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+  
+    .btn-div {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  
