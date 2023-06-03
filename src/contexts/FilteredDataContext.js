@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 import { createContext } from "react";
 import { getAllProduct } from "../data/data";
 import { useEffect } from "react";
@@ -8,13 +8,16 @@ export const FilteredDataContext = createContext();
 
 export const FilteredDataProvider = ({ children }) => {
 
+    const [isLoading, setIsLoading] = useState(false);
+
     const printData = async () => {
         try {
+            setIsLoading(true)
             const dataOne = await getAllProduct();
             dispatch({ type: 'GET_DATA', payload: dataOne.data.products });
+            setIsLoading(false);
         } catch (error) {
             console.log(error);
-
         }
     }
 
@@ -44,6 +47,6 @@ export const FilteredDataProvider = ({ children }) => {
     const filterBySort = state.sortInput ? filterByRatings.sort((itemOne, itemTwo) => state.sortInput === 'LOW_TO_HIGH' ? (itemOne.price - itemTwo.price) : itemTwo.price - itemOne.price) : filterByRatings
     
     return (
-        <FilteredDataContext.Provider value={{ state, dispatch, filterBySearch, filterByPrice, filterByCategory, filterByRatings, filterBySort }}>{children}</FilteredDataContext.Provider>
+        <FilteredDataContext.Provider value={{ state, dispatch, filterBySort, isLoading }}>{children}</FilteredDataContext.Provider>
     )
 }

@@ -21,7 +21,6 @@ export const CartDataProvider = ({children}) => {
                     authorization: token
                 }
             })
-
             setCartData(response.data.cart);
         } catch (error) {
             

@@ -9,8 +9,7 @@ import { useEffect } from 'react';
 const ProductListing = () => {
 
     const [value, setValue] = useState(500);
-    const { filterBySort, dispatch } = useContext(FilteredDataContext);
-    const [isLoading, setIsLoading] = useState(false);
+    const { isLoading, filterBySort, dispatch } = useContext(FilteredDataContext);
 
     const clearFilterHandler = () => {
         dispatch({ type: 'USER_INPUT', payload: '' })
@@ -20,16 +19,6 @@ const ProductListing = () => {
         dispatch({ type: 'SORT_INPUT', payload: '' })
         setValue(500);
     }
-
-    const load = () => {
-        setTimeout(() => {
-           setIsLoading(true); 
-        }, 3000)
-    }
-
-    useEffect(() => {
-        load();
-    }, [])
 
     return (
         <div>
@@ -74,14 +63,6 @@ const ProductListing = () => {
                                 }} id='sort-furniture' />
                                 Furniture
                             </label>
-                            {/* <select name="category" id="category" onChange={(event) => {
-                                dispatch({type: 'DROPBOX_INPUT', payload: event.target.value})
-                            }}>
-                                <option value="Electronics">Electronics</option>
-                                <option value="Furniture">Furniture</option>
-                                <option value="Accessories">Accessories</option>
-                                <option value="Cloths">Cloths</option>
-                            </select> */}
                         </div>
                     </div>
                     <div className='fourth-div'>
@@ -132,10 +113,11 @@ const ProductListing = () => {
                     </div>
                 </aside>
                 <div className='main-bar'>
+                        
                     {
                         filterBySort.length > 0 ? (filterBySort.map((item, index) => (
                             <ProductComponent key={index} items={item} />
-                        ))) : (<h1>No Data Found:)</h1>) 
+                        ))) : ( isLoading ? (<h1>Loading...</h1>) : (<h1>No Data Found {":)"}</h1>))
                     }
                 </div>
             </div>

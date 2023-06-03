@@ -10,7 +10,7 @@ import { toast } from 'react-toastify';
 
 const Cart = () => {
 
-    const { cartData, removeFromCart, increaseCartQty, decreaseCartQty } = useContext(CartDataContext);
+    const { cartData, removeFromCart, increaseCartQty, decreaseCartQty} = useContext(CartDataContext);
     const { wishlistData, addToWishlist, removeFromWishlist } = useContext(WishlistDataContext);
 
     const itemOnWishlist = (itemId) => wishlistData.find(({ _id }) => _id === itemId);
