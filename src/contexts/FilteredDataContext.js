@@ -42,7 +42,7 @@ export const FilteredDataProvider = ({ children }) => {
     const filterByRatings = state.ratingInput ? filterByCategory.filter(({rating}) => rating <= Number(state.ratingInput)) : filterByCategory
 
     const filterBySort = state.sortInput ? filterByRatings.sort((itemOne, itemTwo) => state.sortInput === 'LOW_TO_HIGH' ? (itemOne.price - itemTwo.price) : itemTwo.price - itemOne.price) : filterByRatings
-    console.log(state.checkBoxInput);
+    
     return (
         <FilteredDataContext.Provider value={{ state, dispatch, filterBySearch, filterByPrice, filterByCategory, filterByRatings, filterBySort }}>{children}</FilteredDataContext.Provider>
     )
