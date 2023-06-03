@@ -38,11 +38,15 @@ const AddressModel = () => {
         }
         addUserAddress(enteredDetails)
         setOpen(false);
+        setFullName("")
+        setPhone("")
+        setAddress("")
+        setPincode("")
     }
 
     return (
         <div className='address-div'>
-            <Button className='addBtn' variant="outlined" onClick={handleClickOpen}>
+            <Button className='addBtn' variant="contained" onClick={handleClickOpen}>
                 Add
             </Button>
             <Dialog open={open} onClose={handleClose}>

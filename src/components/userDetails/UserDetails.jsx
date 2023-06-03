@@ -3,13 +3,14 @@ import './userDetails.css';
 import { useContext } from 'react';
 import { FilteredDataContext } from '../../contexts/FilteredDataContext';
 import { toast } from 'react-toastify';
+import { AddressContext } from '../../contexts/addressContext';
 
 
 
 const UserDetails = () => {
 
     const { state, dispatch } = useContext(FilteredDataContext);
-
+    const { selectedUserAddress } = useContext(AddressContext);
     return (
         <div>
             <div className='user-profile-div'>
@@ -18,6 +19,9 @@ const UserDetails = () => {
                         <p className='user-profile-p' ><b>First Name:</b> {state?.userDetails?.firstName}</p>
                         <p className='user-profile-p' ><b>Last Name:</b> {state?.userDetails?.lastName}</p>
                         <p className='user-profile-p' ><b>Email:</b> {state?.userDetails?.email}</p>
+                        {
+                            selectedUserAddress ? (<p className='user-profile-p'><b>Address: </b> {selectedUserAddress.address}</p>) : (<p className='user-profile-p'>Please add address</p>)
+                        }
                     </div>
                     <div className='btn-div'>
                         <button className='logout-btn' onClick={() => {

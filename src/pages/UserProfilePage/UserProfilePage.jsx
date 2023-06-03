@@ -9,6 +9,7 @@ import Box from '@mui/material/Box';
 import UserDetails from '../../components/userDetails/UserDetails';
 import AddressModel from '../../components/addressModel/AddressModel';
 import { AddressContext } from '../../contexts/addressContext';
+import Button from '@mui/material/Button';
 
 
 function TabPanel(props) {
@@ -48,7 +49,7 @@ function a11yProps(index) {
 const UserProfile = () => {
     const [value, setValue] = useState(0);
 
-    const { addressData, setSelectedUser } = useContext(AddressContext)
+    const { addressData, setSelectedUser, removeAddress } = useContext(AddressContext)
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -81,7 +82,7 @@ const UserProfile = () => {
                                     <div className='addressData-div'>
                                         <div className='user-address'>
                                             <label htmlFor={fullName}>
-                                                <input name='userAddress' id={fullName} type="radio" value={address} onClick={(event) => {
+                                                <input name='userAddress' id={fullName} type="radio" value={address} onClick={() => {
                                                     setSelectedUser(fullName)
                                                 }} />
                                                 <div >
@@ -89,6 +90,13 @@ const UserProfile = () => {
                                                     <p><b>Phone Number: </b>{phone}</p>
                                                     <p><b>Address: </b>{userAddress}</p>
                                                     <p><b>Pincode: </b>{pincode}</p>
+                                                    <Button variant="contained" color="error" onClick={
+                                                        () => {
+                                                            removeAddress(index);
+                                                        }
+                                                    }>
+                                                        Delete Address
+                                                    </Button>
                                                 </div>
                                             </label>
                                         </div>
