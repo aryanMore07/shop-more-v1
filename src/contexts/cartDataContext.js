@@ -1,13 +1,19 @@
 import axios from "axios";
 import { useEffect } from "react";
+import { useContext } from "react";
 import { useState } from "react";
 import { createContext } from "react";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { FilteredDataContext } from "./FilteredDataContext";
+import { useNavigate } from "react-router";
 
 export const CartDataContext = createContext();
 
 export const CartDataProvider = ({children}) => {
+
+    const { userDetails } = useContext(FilteredDataContext);
+    const navigate = useNavigate();
 
     const [cartData, setCartData] = useState([]);
 
@@ -30,21 +36,34 @@ export const CartDataProvider = ({children}) => {
     const addToCart = async (item) => {
         const token = localStorage.getItem("token");
         try {
-            const response = await axios.post("/api/user/cart", 
-            {
-                product:item,
-            },
-            {
-                headers: {
-                    authorization: token
+            if (userDetails) {
+                const response = await axios.post("/api/user/cart", 
+                {
+                    product:item,
+                },
+                {
+                    headers: {
+                        authorization: token
+                    }
                 }
-            }
-            );
-            if(response.status === 200 || response.status === 201) {
-                setCartData(response.data.cart);
-                toast.success('Added to Cart 😃', {
+                );
+                if(response.status === 200 || response.status === 201) {
+                    setCartData(response.data.cart);
+                    toast.success('Added to Cart 😃', {
+                        position: "top-center",
+                        autoClose: 750,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                        });
+                }
+            } else {
+                toast.info('Please login first', {
                     position: "top-center",
-                    autoClose: 750,
+                    autoClose: 1000,
                     hideProgressBar: false,
                     closeOnClick: true,
                     pauseOnHover: true,
@@ -52,6 +71,7 @@ export const CartDataProvider = ({children}) => {
                     progress: undefined,
                     theme: "light",
                     });
+                navigate('/login')
             }
         } catch (error) {
             
