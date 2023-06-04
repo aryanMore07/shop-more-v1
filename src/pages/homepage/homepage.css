@@ -55,7 +55,7 @@
   text-align: center;
 }
 
-.cart-img {
+.cart-home-img {
   width: 15rem;
   height: 15rem;
 }
@@ -192,7 +192,7 @@
     color: #3b82f6;
   }
 
-  .cart-img {
+  .cart-home-img {
     width: 15rem;
     height: 15rem;
   }
@@ -310,7 +310,7 @@
     text-align: right;
   }
 
-  .cart-img {
+  .cart-home-img {
     width: 50%;
     height: 50%;
     margin-right: 34px;

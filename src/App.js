@@ -33,9 +33,7 @@ function App() {
           <UserProfile />
         </RequireAuth>} />
         <Route path='/products' element={<ProductListing />} />
-        <Route path='/products/:productId' element={<RequireAuth>
-          <IndividualProduct />
-        </RequireAuth>} />
+        <Route path='/products/:productId' element={<IndividualProduct />} />
         <Route path='/login' element={<Authentication />} />
         <Route path='/mockman' element={<MockmanComponent />} />
         <Route path='/*' element={<ErrorPage />} />

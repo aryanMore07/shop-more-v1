@@ -31,7 +31,7 @@ const Home = () => {
       </div>
       <div className='middle-div'>
         <h1 className='middle-tag-line'>Add your favorite items to the <span className='middle-pointed-text'>cart</span> and <span className='middle-pointed-text'>wishlist</span></h1>
-        <img src={cartImage} alt="cart-pic" className='cart-img' />
+        <img src={cartImage} alt="cart-pic" className='cart-home-img' />
       </div>
       <div className='last-div'>
         <div className='categories-div'>

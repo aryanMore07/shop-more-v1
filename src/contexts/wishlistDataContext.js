@@ -12,7 +12,7 @@ export const WishlistDataContext = createContext();
 export const WishlistDataProvider = ({children}) => {
 
     const [wishlistData, setWishlistData] = useState([]);
-    const { userDetails } = useContext(FilteredDataContext);
+    const { state } = useContext(FilteredDataContext);
     const navigate = useNavigate();
 
     const fetchWishlistData = async () => {
@@ -35,7 +35,7 @@ export const WishlistDataProvider = ({children}) => {
     const addToWishlist = async (item) => {
         const token = localStorage.getItem("token");
         try {
-            if(userDetails) {
+            if(state.userDetails) {
                 const response = await axios.post("/api/user/wishlist",
                 {
                     product: item

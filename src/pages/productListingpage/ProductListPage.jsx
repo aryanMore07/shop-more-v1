@@ -11,7 +11,7 @@ const ProductListing = () => {
     const { isLoading, filterBySort, dispatch } = useContext(FilteredDataContext);
 
     const clearFilterHandler = () => {
-        dispatch({ type: 'USER_INPUT', payload: '' })
+ below({ type: 'USER_INPUT', payload: '' })
         dispatch({ type: 'PRICE_INPUT', payload: '' })
         dispatch({ type: 'DROPBOX_INPUT', payload: '' })
         dispatch({ type: 'RATING_INPUT', payload: '' })
@@ -71,25 +71,25 @@ const ProductListing = () => {
                                 <input className='filter-checkbox' type="radio" name='filerByRating' id='four-star' value='4' onChange={(event) => {
                                     dispatch({ type: 'RATING_INPUT', payload: event.target.value })
                                 }} />
-                                4 Stars & above
+                                4 Stars & below
                             </label>
                             <label htmlFor="three-star">
                                 <input className='filter-checkbox' type="radio" name='filerByRating' id='three-star' value='3' onChange={(event) => {
                                     dispatch({ type: 'RATING_INPUT', payload: event.target.value })
                                 }} />
-                                3 Stars & above
+                                3 Stars & below
                             </label>
                             <label htmlFor="two-star">
                                 <input className='filter-checkbox' type="radio" name='filerByRating' id='two-star' value='2' onChange={(event) => {
                                     dispatch({ type: 'RATING_INPUT', payload: event.target.value })
                                 }} />
-                                2 Stars & above
+                                2 Stars & below
                             </label>
                             <label htmlFor="one-star">
                                 <input className='filter-checkbox' type="radio" name='filerByRating' id='one-star' value='1' onChange={(event) => {
                                     dispatch({ type: 'RATING_INPUT', payload: event.target.value })
                                 }} />
-                                1 Stars & above
+                                1 Stars & below
                             </label>
                         </div>
                     </div>

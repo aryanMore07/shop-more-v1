@@ -12,9 +12,8 @@ export const CartDataContext = createContext();
 
 export const CartDataProvider = ({children}) => {
 
-    const { userDetails } = useContext(FilteredDataContext);
+    const { state } = useContext(FilteredDataContext);
     const navigate = useNavigate();
-
     const [cartData, setCartData] = useState([]);
 
     const fetchCartData = async () => {
@@ -36,7 +35,19 @@ export const CartDataProvider = ({children}) => {
     const addToCart = async (item) => {
         const token = localStorage.getItem("token");
         try {
-            if (userDetails) {
+            if (!state.userDetails) {
+                toast.info('Please login first', {
+                    position: "top-center",
+                    autoClose: 1000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    });
+                navigate('/login')
+            } else {
                 const response = await axios.post("/api/user/cart", 
                 {
                     product:item,
@@ -60,18 +71,7 @@ export const CartDataProvider = ({children}) => {
                         theme: "light",
                         });
                 }
-            } else {
-                toast.info('Please login first', {
-                    position: "top-center",
-                    autoClose: 1000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
-                    });
-                navigate('/login')
+
             }
         } catch (error) {
             

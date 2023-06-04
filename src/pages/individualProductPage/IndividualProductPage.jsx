@@ -7,35 +7,18 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useState } from 'react';
 import { CartDataContext } from '../../contexts/cartDataContext';
 import { WishlistDataContext } from '../../contexts/wishlistDataContext';
-
+import { FilteredDataContext } from '../../contexts/FilteredDataContext';
 const IndividualProduct = () => {
 
   const { productId } = useParams();
-  const [product, setProduct] = useState([]);
+  const { state } = useContext(FilteredDataContext);
   const { addToCart } = useContext(CartDataContext);
-  const fetchProductDetail = async () => {
-    try {
-      
-      const response = axios.get(`/api/products/${productId}`);
-      if (response.status === 200) {
-        alert('Individual data successful');
-      }
-      console.log((await response).data.product);
-      setProduct((await response).data.product);
-      
-    } catch (error) {
-      console.log(error);
-    }
-  }
 
-  useEffect(() => {
-    fetchProductDetail()
-  }, [])
-
+  const product = state.productsData.find((item) => item._id === productId)
   const { wishlistData, addToWishlist, removeFromWishlist } = useContext(WishlistDataContext);
   const itemOnWishlist = (itemId) => wishlistData.find(({ _id }) => _id === itemId);
-  const { _id, category, image, inStock, name, price } = product;
-  console.log(product);
+  const { _id, category, image, inStock, name, price, discription } = product;
+  console.log(discription)
   return (
     <>
       {
@@ -63,6 +46,14 @@ const IndividualProduct = () => {
                 <p className='p_tags'><b>Category: </b>{category}</p>
                 <p className='p_tags' style={{ color: inStock ? 'green' : 'red' }}><b>{inStock ? 'In Stock' : 'Out of stock'}</b></p>
                 <p className='p_tags'><b>Price: </b>{price}</p>
+                <p className='p_tags'><b>Features: </b>
+                <ul>
+                  {
+                    discription.map((feature, index) => (
+                      <li key={index}>{feature}</li>
+                    ))
+                  }
+                </ul></p>
                 <button className='add-to-cart ' onClick={() => {
                   addToCart(_id)
                 }}>Add to cart</button>

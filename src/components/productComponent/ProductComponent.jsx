@@ -12,9 +12,12 @@ export const ProductComponent = ({ items }) => {
     const navigate = useNavigate();
     const itemOnCart = (itemId) => cartData.find(({ _id }) => _id === itemId);
     const itemOnWishlist = (itemId) => wishlistData.find(({ _id }) => _id === itemId);
-    const { _id, name, price, inStock, category, image } = items;
+    const { _id, name, price, inStock, category, image, rating } = items;
     return (
         <div key={_id} className='product-card'>
+            <div className='rating-div'>
+                {rating} ⭐
+            </div>
             <div className='wishlist-btn'>
 
                 {
