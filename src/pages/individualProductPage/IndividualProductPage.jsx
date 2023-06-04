@@ -1,10 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import './individualProduct.css';
 import { useParams } from 'react-router';
-import axios from 'axios';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import { useState } from 'react';
 import { CartDataContext } from '../../contexts/cartDataContext';
 import { WishlistDataContext } from '../../contexts/wishlistDataContext';
 import { FilteredDataContext } from '../../contexts/FilteredDataContext';
