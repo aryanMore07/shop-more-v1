@@ -11,7 +11,7 @@ const ProductListing = () => {
     const { isLoading, filterBySort, dispatch } = useContext(FilteredDataContext);
 
     const clearFilterHandler = () => {
- below({ type: 'USER_INPUT', payload: '' })
+        dispatch({ type: 'USER_INPUT', payload: '' })
         dispatch({ type: 'PRICE_INPUT', payload: '' })
         dispatch({ type: 'DROPBOX_INPUT', payload: '' })
         dispatch({ type: 'RATING_INPUT', payload: '' })
