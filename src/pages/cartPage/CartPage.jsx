@@ -55,7 +55,6 @@ const Cart = () => {
                                     return (
                                         <div style={{ padding: '30px' }} key={_id} >
                                             <div className='cart-card'>
-                                                <></>
                                                 <img className='cart-img ' src={image} alt="cart" />
                                                 <div className='wishlist-btn'>
                                                     {
@@ -100,12 +99,14 @@ const Cart = () => {
                             }
                         </div>
 
-                        <div className='checkout-div'>
+                        <div className='totalPrice-div'>
                             <div>
-                                <h3 className='checkout-header'>PRICE DETAILS</h3>
+                                <h3 className='totalPrice-header'>PRICE DETAILS</h3>
                                 <hr />
                                 <div>
                                     <div className='price-info-div'><p><b>PRICE:</b></p> <p>{totalPrice}</p></div>
+                                    <div className='price-info-div'><p><b>Delivery Charges:</b></p> <p>Free</p></div>
+                                
                                 </div>
                             </div>
                             <div>
