@@ -23,7 +23,7 @@ const Navbar = () => {
                     <Link className='navlogin-btn heading-tag' to='/'><h2>Shop More</h2></Link>
                 </li>
                 <li className='middle-one-div'>
-                    <input type="text" className='input-box' placeholder='Search items' onChange={(event) => {
+                    <input type="text" className='input-box' placeholder='Search items' value={state.searchInput} onChange={(event) => {
                         dispatch({ type: 'USER_INPUT', payload: event.target.value })
                     }} />
                 </li>

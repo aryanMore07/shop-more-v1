@@ -13,10 +13,6 @@ export const filterReducer = (state, action) => {
             return {
                 ...state, priceInput: action.payload
             }
-        case 'DROPBOX_INPUT':
-            return {
-                ...state, dropboxInput: action.payload
-            }
         case 'CHECKBOX_INPUT':
             return {
                 ...state, checkBoxInput: state.checkBoxInput.includes(action.payload) ? state.checkBoxInput.filter((category) => category !== action.payload) : [...state.checkBoxInput, action.payload]
@@ -37,7 +33,20 @@ export const filterReducer = (state, action) => {
             return {
                 ...state, cartData: action.payload
             }
-        
+        case "UPDATE_FILTERED_DATA":
+            return {
+                ...state, productsData: action.payload
+            }
+        case 'CLEAR_FILTERS':
+            return {
+                ...state,
+                searchInput: '',
+                priceInput: '',
+                ratingInput: '',
+                checkBoxInput: [],
+                sortInput: '',
+            };
+
         default:
             return state;
     }
