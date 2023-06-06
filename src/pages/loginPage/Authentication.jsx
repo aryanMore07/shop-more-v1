@@ -10,7 +10,7 @@ import { toast } from 'react-toastify';
 
 const Authentication = () => {
 
-  const [loginComponent, setLoginComponent] = useState(false);
+  const [loginComponent, setLoginComponent] = useState(true);
   // For Login Component
 
   const [loginEmail, setLoginEmail] = useState('');
@@ -18,11 +18,71 @@ const Authentication = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { dispatch } = useContext(FilteredDataContext);
+
+
   const loginHandler = async () => {
     try {
       const response = await axios.post('/api/auth/login', {
         email: loginEmail,
         password: loginPassword
+      })
+      if(response.status === 200) {
+        toast.success('Login successful', {
+          position: "top-center",
+          autoClose: 750,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });
+          setLoginEmail("");
+          setLoginPassword("");
+      }
+      localStorage.setItem('token', response.data.encodedToken)
+      dispatch({ type: 'UPDATE_USERS_LOGIN', payload: response.data.foundUser });
+      navigate(location?.state?.from?.pathname || '/');
+
+
+    } catch (error) {
+      if(error.response.status === 401) {
+        toast.error('Please enter valid credentials', {
+          position: "top-center",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });
+      } else if(error.response.status === 404) {
+        toast.error('Entered credentials not found. Please signup first! ', {
+          position: "top-center",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });
+      }
+    }
+  }
+
+  // Guest Login Handler
+
+  const guestLoginHandler = async () => {
+    const emailguest = 'adarshbalika@gmail.com';
+    const passwordguest = 'adarshbalika';
+    setLoginEmail(emailguest);
+    setLoginPassword(passwordguest);
+    try {
+      const response = await axios.post('/api/auth/login', {
+        email: emailguest,
+        password: passwordguest
       })
       if(response.status === 200) {
         toast.success('Login successful', {
@@ -164,6 +224,7 @@ const Authentication = () => {
                 }} />
               </label>
               <button className='login-btn' onClick={loginHandler}>Login</button>
+              <button className='login-btn' onClick={guestLoginHandler}>Guest Login</button>
               <p className='link-tag' onClick={() => {
                 setLoginComponent(loginComponent => !loginComponent)
               }}>Create an account {'>'}</p>
