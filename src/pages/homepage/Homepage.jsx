@@ -4,11 +4,14 @@ import headerImage from '../../images/ecommerceHeaderImg.svg';
 import cartImage from '../../images/addtocartImg.svg';
 import { getAllCategory } from '../../data/data';
 import { useNavigate } from 'react-router';
+import { useContext } from 'react';
+import { FilteredDataContext } from '../../contexts/FilteredDataContext';
 
 const Home = () => {
 
   const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
+  const { dispatch } = useContext(FilteredDataContext)
 
   const fetchCategories = async () => {
     try {
@@ -40,6 +43,7 @@ const Home = () => {
               const { _id, categoryName, description, img } = category;
               return (
                 <div onClick={() => {
+                  dispatch({type: 'CHECKBOX_INPUT', payload: categoryName})
                   navigate('/products');
                 }} className='category' key={_id}>
                   <img className='product-img' src={img} alt="product" />
