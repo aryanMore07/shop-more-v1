@@ -108,7 +108,6 @@ const ProductListing = () => {
                     </div>
                 </aside>
                 <div className='main-bar'>
-                    <h1>Products ({filterBySort.length})</h1>
                     {
                         filterBySort.length > 0 ? (filterBySort.map((item, index) => (
                             <ProductComponent key={index} items={item} />
