@@ -15,7 +15,6 @@ const Navbar = () => {
     const { cartData } = useContext(CartDataContext);
     const { wishlistData } = useContext(WishlistDataContext);
 
-
     return (
         <div className='navbar-div'>
             <ul className='layout'>
@@ -35,12 +34,12 @@ const Navbar = () => {
                                 <NavLink to='/login' className='navlogin-btn'>Login</NavLink>)
                         }
                         <NavLink to='products' className='navlogin-btn'>Shop</NavLink>
-                        <Badge className='mui-icons' badgeContent={wishlistData.length} color="error">
+                        <Badge className='mui-icons' badgeContent={state?.userDetails ? wishlistData.length : null} color="error">
                             <Favorite className='icon' onClick={() => {
                                 navigate('/wishlist')
                             }} />
                         </Badge>
-                        <Badge className='mui-icons' badgeContent={cartData.length} color="error">
+                        <Badge className='mui-icons' badgeContent={state?.userDetails ? cartData.length : null} color="error">
                             <ShoppingCart className='icon' onClick={() => {
                                 navigate('/cart')
                             }} />
