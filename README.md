@@ -31,12 +31,12 @@ To use ShopMore, follow these steps:
 3. Add products to your cart.
 4. Complete the checkout process to purchase products.
 
-## Contributing
+    ## Contributing
 
-We welcome contributions to ShopeMore! If you find a bug or would like to suggest a feature, please create an issue on this repository. If you would like to contribute code, please create a pull request.
+    We welcome contributions to ShopeMore! If you find a bug or would like to suggest a feature, please create an issue on this repository. If you would like to contribute code, please create a pull request.
 
-## Credits
+    ## Credits
 
-ShopMore was created by Aryan More.
+    ChatMore is created by **[Aryan More](https://www.linkedin.com/in/aryan-more-417497216/)**.
 
-# Thankyou 🙏🏻
+    # Thankyou 🙏🏻
