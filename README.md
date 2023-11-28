@@ -37,6 +37,6 @@ We welcome contributions to ShopeMore! If you find a bug or would like to sugges
 
 ## Credits
 
-ChatMore is created by **[Aryan More](https://www.linkedin.com/in/aryan-more-417497216/)**.
+ShopMore is created by **[Aryan More](https://www.linkedin.com/in/aryan-more-417497216/)**.
 
 # Thankyou 🙏🏻
