@@ -7,7 +7,8 @@ import { useNavigate } from "react-router";
 import { useContext } from "react";
 import { FilteredDataContext } from "../../contexts/FilteredDataContext";
 import { styled } from "@mui/material/styles";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Card, Grid, Typography } from "@mui/material";
+import { theme } from "../../utils/theme";
 
 const TopSection = styled(Box)(({ theme }) => ({
   maxWidth: "1280px",
@@ -95,6 +96,37 @@ const MiddleInnerContainer = styled(Box)(({ theme }) => ({
   justifyContent: "center",
 }));
 
+const LastContainer = styled(Box)(({ theme }) => ({
+  width: "100%",
+  margin: "auto",
+  height: "100vh",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  padding: `${theme.spacing(4)} 0px`,
+  [theme.breakpoints.down("md")]: {
+    height: "100%",
+  },
+}));
+
+const LastInnerContainer = styled(Box)(({ theme }) => ({
+  maxWidth: "1280px",
+  width: "90%",
+  margin: "auto",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+}));
+
+const LastComponentTitle = styled(Typography)(({ theme }) => ({
+  fontSize: "36px",
+  lineHeight: "36px",
+  color: "#3b82f6",
+  fontWeight: "bold",
+  marginBottom: theme.spacing(6),
+}));
+
 const Home = () => {
   const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
@@ -153,27 +185,39 @@ const Home = () => {
           </Grid>
         </MiddleInnerContainer>
       </MiddleContainer>
-      <div className="last-div">
-        <div className="categories-div">
-          {categories.map((category) => {
-            const { _id, categoryName, description, img } = category;
-            return (
-              <div
-                onClick={() => {
-                  dispatch({ type: "CHECKBOX_INPUT", payload: categoryName });
-                  navigate("/products");
-                }}
-                className="category"
-                key={_id}
-              >
-                <img className="product-img" src={img} alt="product" />
-                <h3>{categoryName}</h3>
-                <p>{description}</p>
-              </div>
-            );
-          })}
-        </div>
-      </div>
+      <LastContainer>
+        <LastInnerContainer>
+          <LastComponentTitle>Categories</LastComponentTitle>
+          <Grid container spacing={2}>
+            {categories.map((category) => {
+              const { _id, categoryName, description, img } = category;
+              return (
+                <Grid item xs={12} sm={6} md={3} key={_id}>
+                  <Card
+                    sx={{ height: "100%", padding: theme.spacing(2) }}
+                    onClick={() => {
+                      dispatch({
+                        type: "CHECKBOX_INPUT",
+                        payload: categoryName,
+                      });
+                      navigate("/products");
+                    }}
+                    key={_id}
+                  >
+                    <ImageContainer sx={{height: "150px", [theme.breakpoints.down("sm")]: {
+                      height: "200px",
+                    }}}>
+                      <ImageElement src={img} alt="product" />
+                    </ImageContainer>
+                    <h3>{categoryName}</h3>
+                    <p>{description}</p>
+                  </Card>
+                </Grid>
+              );
+            })}
+          </Grid>
+        </LastInnerContainer>
+      </LastContainer>
     </div>
   );
 };
