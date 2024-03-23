@@ -73,6 +73,28 @@ const Heading = styled(Typography)(({ theme }) => ({
   },
 }));
 
+const MiddleContainer = styled(Box)(({ theme }) => ({
+  width: "100%",
+  margin: "auto",
+  height: "100vh",
+  display: "flex",
+  alignItems: "center",
+  backgroundColor: "#374151",
+  [theme.breakpoints.down("md")]: {
+    height: "100%",
+    padding: `${theme.spacing(4)} 0px`,
+  },
+}));
+
+const MiddleInnerContainer = styled(Box)(({ theme }) => ({
+  maxWidth: "1280px",
+  width: "90%",
+  margin: "auto",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+}));
+
 const Home = () => {
   const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
@@ -111,14 +133,26 @@ const Home = () => {
           </Grid>
         </Grid>
       </TopSection>
-      <div className="middle-div">
-        <h1 className="middle-tag-line">
-          Add your favorite items to the{" "}
-          <span className="middle-pointed-text">cart</span> and{" "}
-          <span className="middle-pointed-text">wishlist</span>
-        </h1>
-        <img src={cartImage} alt="cart-pic" className="cart-home-img" />
-      </div>
+      <MiddleContainer>
+        <MiddleInnerContainer>
+          <Grid container>
+            <Grid item xs={12} sm={12} md={6}>
+              <TextContainer>
+                <h1 className="middle-tag-line">
+                  Add your favorite items to the{" "}
+                  <span className="middle-pointed-text">cart</span> and{" "}
+                  <span className="middle-pointed-text">wishlist</span>
+                </h1>
+              </TextContainer>
+            </Grid>
+            <Grid item xs={12} sm={12} md={6}>
+              <ImageContainer>
+                <ImageElement src={cartImage} alt="cart-pic" />
+              </ImageContainer>
+            </Grid>
+          </Grid>
+        </MiddleInnerContainer>
+      </MiddleContainer>
       <div className="last-div">
         <div className="categories-div">
           {categories.map((category) => {
