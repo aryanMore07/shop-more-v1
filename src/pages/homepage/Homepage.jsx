@@ -194,7 +194,11 @@ const Home = () => {
               return (
                 <Grid item xs={12} sm={6} md={3} key={_id}>
                   <Card
-                    sx={{ height: "100%", padding: theme.spacing(2) }}
+                    sx={{
+                      height: "100%",
+                      padding: theme.spacing(2),
+                      cursor: "pointer",
+                    }}
                     onClick={() => {
                       dispatch({
                         type: "CHECKBOX_INPUT",
@@ -204,9 +208,14 @@ const Home = () => {
                     }}
                     key={_id}
                   >
-                    <ImageContainer sx={{height: "150px", [theme.breakpoints.down("sm")]: {
-                      height: "200px",
-                    }}}>
+                    <ImageContainer
+                      sx={{
+                        height: "150px",
+                        [theme.breakpoints.down("sm")]: {
+                          height: "200px",
+                        },
+                      }}
+                    >
                       <ImageElement src={img} alt="product" />
                     </ImageContainer>
                     <h3>{categoryName}</h3>
